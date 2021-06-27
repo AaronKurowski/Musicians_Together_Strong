@@ -3,6 +3,6 @@ import showReducer from './showReducer';
 
 export default combineReducers({
     shows: showReducer,
-    // another reducer,
-    // and another reducer
+    // gear: gearReducer,
+    // music: musicReducer
 });

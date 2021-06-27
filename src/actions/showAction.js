@@ -5,7 +5,7 @@ import axios from 'axios';
 //thunk middleware allows us to call dispatch function direclty so we can make async requests
 //dispatch is like resolving a promise; dispatch allows for sending of data
 export const fetchShows = () => dispatch => {
-    axios.get('')
+    axios.get('https://localhost:44394/api/show')
         .then(shows => dispatch({
             type: FETCH_SHOWS,
             payload: shows.data
@@ -13,7 +13,7 @@ export const fetchShows = () => dispatch => {
 }
 
 export const createShow = (postShow) => dispatch => {
-    axios.post('', {
+    axios.post('https://localhost:44394/api/show', {
             userId: postShow.userId,
             name: postShow.name,
             description: postShow.description,

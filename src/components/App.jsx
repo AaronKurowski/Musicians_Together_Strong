@@ -34,7 +34,7 @@ class App extends Component {
                         <Route exact path="/music" component={Music}/>
                     </Switch>
                 </div>
-            // </Provider>
+            </Provider>
         );
     }
 }
