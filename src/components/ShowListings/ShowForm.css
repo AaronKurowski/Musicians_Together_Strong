@@ -1,0 +1,29 @@
+input {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-submit-btn {
+    background-color: blue !important;
+    color: white !important;
+    margin-top: 10px !important;
+}
+
+.modal-opener {
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.modal-closer {
+    color: white !important;
+    background-color: blue !important;
+}
+
+.center-modal{
+    margin: 0 auto !important;
+}
+
+.modal-div {
+    display: flex !important;
+}
