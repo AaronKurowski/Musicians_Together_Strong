@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {fetchShows, createShow} from '../../actions/showAction';
-import ShowListings from './ShowListings';
+import { createShow } from '../../actions/showAction';
+import PropTypes from 'prop-types';
+
 
 class ShowForm extends Component {
     constructor(){
@@ -20,17 +20,28 @@ class ShowForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-
+        
+        debugger;
         const show = {
             userId: this.state.userId,
             name: this.state.name,
             description: this.state.description,
             bands: this.state.bands,
             imageurl: this.state.imageurl,
-            entryfee: this.state.entryfee,
+            entryfee: parseInt(this.state.entryfee),
             date: this.state.date
         }
         this.props.createShow(show);
+
+        this.setState({
+            userId: null,
+            name: '',
+            description: '',
+            bands: '',
+            imageurl: '',
+            entryfee: null,
+            date: null
+        })
     }
 
     handleChange = (event) => {
@@ -68,4 +79,8 @@ class ShowForm extends Component {
     }
 }
 
-export default ShowForm;
+ShowForm.propTypes = {
+    createShow: PropTypes.func.isRequired
+};
+
+export default connect(null, { createShow })(ShowForm);

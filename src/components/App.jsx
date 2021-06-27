@@ -26,7 +26,7 @@ class App extends Component {
         return(
             <Provider store={store}>
                 <div>
-                    <h3>This is the start of the app</h3>
+                    <h3>Musicians Together Strong</h3>
                     <Switch>
                         <Route exact path="/" component={Home}/>
                         <Route exact path="/listings" component={ShowListings}/>

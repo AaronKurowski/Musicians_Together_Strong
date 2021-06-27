@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import ShowForm from './ShowForm.jsx';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchShows, createShow } from '../../actions/showAction';
+import { fetchShows } from '../../actions/showAction';
 
 class ShowListings extends Component {
     componentDidMount = () => {
@@ -13,13 +13,15 @@ class ShowListings extends Component {
         console.log(this.props.shows);
         return this.props.shows.map(show => (
             <div>
-                {show.name}
+                <h4>{show.name}</h4>          
+                <p>{show.description}</p>
             </div>
         ));
     }
     render(){
         return(
             <div>
+                <ShowForm />
                 {this.mapShows()}
             </div>
         );
