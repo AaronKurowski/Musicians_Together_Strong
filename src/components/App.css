@@ -1,0 +1,14 @@
+#grad {
+    background-image: linear-gradient(blue, magenta);
+}
+
+h1{
+    text-align: center;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: -1px 0 magenta, 0 1px magenta, 1px 0 magenta, 0 -1px magenta;
+}
+
+.main-div {
+    height: 100vh;
+    width: 100%;
+}

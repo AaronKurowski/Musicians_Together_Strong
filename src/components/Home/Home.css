@@ -1,0 +1,21 @@
+.home-btn-div{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    font-family: cursive;
+}
+
+/* .home-btn {
+    background-color: magenta;
+    text-align: center;
+}
+
+button{
+    background: magenta;
+} */
+
+.btn{
+    background-color: magenta !important;
+    color: black !important;
+    border: 1px solid black !important;
+}

@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link
+    Route
 } from "react-router-dom";
 
 import Home from './Home/Home.jsx';
@@ -13,6 +12,7 @@ import Music from './Music/Music.jsx';
 
 import { Provider } from 'react-redux';
 import store from '../store.js';
+import './App.css';
 
 
 class App extends Component {
@@ -25,8 +25,9 @@ class App extends Component {
     render(){
         return(
             <Provider store={store}>
-                <div>
-                    <h3>Musicians Together Strong</h3>
+                <div id="grad" className="container-fluid main-div">
+                    <h1>Musicians Together Strong</h1>
+
                     <Switch>
                         <Route exact path="/" component={Home}/>
                         <Route exact path="/listings" component={ShowListings}/>
