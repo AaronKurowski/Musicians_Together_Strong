@@ -1,20 +1,17 @@
-import { FETCH_SHOWS, NEW_SHOW } from '../actions/types';
+import { FETCH_GEAR, NEW_GEAR } from '../actions/types';
 
 const initialState = {
     items: []
 }
 
-//...state is the current state with the spread operator
-//action.payload is referring to the data being passed from the action to the reducer
-
 export default function(state = initialState, action){
     switch(action.type){
-        case FETCH_SHOWS:
+        case FETCH_GEAR:
             return{
                 ...state,
                 items: action.payload
             };
-        case NEW_SHOW:
+        case NEW_GEAR:
             return{
                 ...state,
                 items: [action.payload, ...state.items]
