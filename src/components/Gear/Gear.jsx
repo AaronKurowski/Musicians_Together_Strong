@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { fetchGear } from '../../actions/gearAction';
 import './Gear.css';
 import GearForm from './GearForm.jsx';
+import Map from '../Maps/Maps.jsx';
 
 class Gear extends Component {
     componentWillMount = () => {
@@ -21,6 +22,7 @@ class Gear extends Component {
         return(
             <div>
                 <GearForm />
+                <Map />
                 {this.mapGear()}
             </div>
         );  
