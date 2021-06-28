@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { createShow } from '../../actions/showAction';
 import PropTypes from 'prop-types';
 import './ShowForm.css';
-
 import { Button, Modal } from 'react-bootstrap';
 
 

@@ -20,6 +20,7 @@ class Gear extends Component {
     render(){
         return(
             <div>
+                <GearForm />
                 {this.mapGear()}
             </div>
         );  
