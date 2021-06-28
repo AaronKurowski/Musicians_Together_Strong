@@ -13,6 +13,7 @@ import Music from './Music/Music.jsx';
 import { Provider } from 'react-redux';
 import store from '../store.js';
 import './App.css';
+import Nav from './Nav/Nav';
 
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
         return(
             <Provider store={store}>
                 <div id="grad" className="container-fluid main-div">
+                    <Nav />
                     <h1>Musicians Together Strong</h1>
 
                     <Switch>
