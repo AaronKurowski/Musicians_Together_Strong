@@ -41,6 +41,7 @@ class App extends Component {
                         }} /> */}
                         <Route exact path='/register' component={Register}></Route>
                         <Route exact path="/login" component={Login}/>
+                        <Route exact path="/gearbag" /* component={gearbag} */ />
                         <Route exact path="/listings" component={ShowListings}/>
                         <Route exact path="/gear" component={Gear}/>
                         <Route exact path="/music" component={Music}/>
