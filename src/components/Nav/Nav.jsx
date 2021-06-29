@@ -12,7 +12,7 @@ class Nav extends Component {
                 {/* Conditionally render these */}
                 <Link style={{float: 'right'}} to='/login'>Log In</Link>
                 <Link style={{float: 'right'}} to='/register'>Register</Link>
-                <Link style={{float: 'right'}} onClick>Log Out</Link>
+                <Link style={{float: 'right'}} >Log Out</Link>
             </div>
         );
     }
