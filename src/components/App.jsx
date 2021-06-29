@@ -16,16 +16,42 @@ import './App.css';
 import Nav from './Nav/Nav';
 import Login from './Login/Login.jsx';
 import Register from './Registration/Register.jsx';
+import jwtDecode from 'jwt-decode';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 
 class App extends Component {
+    
+
+    componentWillMount = () => {
+        console.log(this.props);
+        const jwt = localStorage.getItem('token');
+        try{
+            const user = jwtDecode(jwt);
+            console.log(user.name + " logged in");
+        } 
+        catch{
+            console.log("User not logged in");
+        }
+    }
+
     // componentDidMount = () => {
-    //     // jwt authentication
+    //     localStorage.removeItem('token');
+    //     console.log(localStorage);
+    //     // const jwt = localStorage.getItem('token');
+    //     try{
+    //         debugger;
+    //         // const user = jwtDecode(jwt);
+    //         // console.log("User logged in");
+    //     }catch{
+    //         console.log("User not logged in");
+    //     }
     // }
 
     render(){
         return(
-            <Provider store={store}>
+            
                 <div id="grad" className="container-fluid main-div">
                     <Nav />
                     <h1>Musicians Together Strong</h1>
@@ -48,8 +74,17 @@ class App extends Component {
                         
                     </Switch>
                 </div>
-            </Provider>
+            
         );
     }
 }
-export default App;
+
+App.propTypes = {
+    userToken: PropTypes.array.isRequired,
+}
+
+const mapStateToProps = state => ({
+    userToken: state.userToken
+});
+
+export default connect(mapStateToProps)(App);

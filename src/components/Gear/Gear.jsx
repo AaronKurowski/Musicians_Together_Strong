@@ -12,13 +12,13 @@ class Gear extends Component {
     }
 
     mapGear = () => {
-        debugger;
         console.log(this.props.gear);
         return this.props.gear.map(gear => (
             <div>{gear.name}</div>
         ));
     }
     render(){
+        console.log(this.props);
         return(
             <div>
                 <GearForm />

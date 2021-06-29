@@ -42,8 +42,9 @@ class RegisterForm extends Component {
             band: this.state.band,
             genre: this.state.genre
         };
-        debugger;
+
         this.props.registerUser(user);
+        alert("You have been registered successfully!")
 
         debugger;
         this.setState({

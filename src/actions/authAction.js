@@ -16,24 +16,29 @@ export const registerUser = (postRegister) => dispatch => {
     })
         .then(user => dispatch({
             type: REGISTER_USER,
-            payload: user
+            payload: user.data
         }));
 }
 
-// boiler plate
-// export const createGear = (postGear) => dispatch => {
-//     debugger;
-//     axios.post('https://localhost:44394/api/gear', {
-//         userId: postGear.userId,
-//         name: postGear.name,
-//         description: postGear.description,
-//         price: postGear.price,
-//         imageurl: postGear.imageurl,
-//         condition: postGear.condition,
-//         date: postGear.datelisted
-//     })
-//     .then(gear => dispatch({
-//         type: NEW_GEAR,
-//         payload: gear.data
-//     }));
-// }
+export const loginUser = (postLogin) => dispatch => {
+    debugger;
+    axios.post('https://localhost:44394/api/authentication/login', {
+        userName: postLogin.userName,
+        password: postLogin.password
+    })
+        .then(userToken => dispatch({
+            type: LOGIN_USER,
+            payload: userToken.data
+        }));
+        console.log("made it here");
+}
+
+export const getUser = (token) => dispatch => {
+    axios.get('https://localhost:44394/api/examples/user', {
+        headers: {"Authorization" : `Bearer ${token}`}
+    })
+        .then(user => dispatch({
+            type: GET_USER,
+            payload: user.data
+        }));
+}
