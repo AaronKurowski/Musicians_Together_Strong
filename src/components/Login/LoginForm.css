@@ -1,17 +1,10 @@
 .login-form-div {
-    /* background-color: black; */
     color: white;
     font-weight: 700;
 }
 
-.login-form {
-    /* border: 2px solid magenta; */
-
-}
-
 .outer-login-div {
     width: 100%;
-    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
 }

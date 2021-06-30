@@ -62,37 +62,39 @@ class RegisterForm extends Component {
 
     render(){
         return(
-            <div className="register-div">
-                <form onSubmit={(event) => this.handleSubmit(event)}>
-                    <label for="firstName">First Name</label>
-                    <input type="text" name="firstName" id="firstName" value={this.state.firstName} onChange={(event) => this.handleChange(event)}></input>
+            <div className="outer-reg-div">
+                <div className="reg-form-div">
+                    <form className="reg-form" onSubmit={(event) => this.handleSubmit(event)}>
+                        <label for="firstName">First Name</label>
+                        <input type="text" name="firstName" id="firstName" value={this.state.firstName} onChange={(event) => this.handleChange(event)}></input>
 
-                    <label for="lastName">Last Name</label>
-                    <input type="text" name="lastName" id="lastName" value={this.state.lastName} onChange={(event) => this.handleChange(event)}></input>
+                        <label for="lastName">Last Name</label>
+                        <input type="text" name="lastName" id="lastName" value={this.state.lastName} onChange={(event) => this.handleChange(event)}></input>
 
-                    <label for="userName">UserName</label>
-                    <input type="text" name="userName" id="userName" value={this.state.userName} onChange={(event) => this.handleChange(event)}></input>
+                        <label for="userName">UserName</label>
+                        <input type="text" name="userName" id="userName" value={this.state.userName} onChange={(event) => this.handleChange(event)}></input>
 
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" value={this.state.password} onChange={(event) => this.handleChange(event)}></input>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" value={this.state.password} onChange={(event) => this.handleChange(event)}></input>
 
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" value={this.state.email} onChange={(event) => this.handleChange(event)}></input>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" value={this.state.email} onChange={(event) => this.handleChange(event)}></input>
 
-                    <label for="phoneNumber">PhoneNumber</label>
-                    <input type="tel" name="phoneNumber" id="phoneNumber" value={this.state.phoneNumber} onChange={(event) => this.handleChange(event)}></input>
+                        <label for="phoneNumber">PhoneNumber</label>
+                        <input type="tel" name="phoneNumber" id="phoneNumber" value={this.state.phoneNumber} onChange={(event) => this.handleChange(event)}></input>
 
-                    <label for="instrument">Main Instrument</label>
-                    <input type="text" name="instrument" id="instrument" value={this.state.instrument} onChange={(event) => this.handleChange(event)}></input>
+                        <label for="instrument">Main Instrument</label>
+                        <input type="text" name="instrument" id="instrument" value={this.state.instrument} onChange={(event) => this.handleChange(event)}></input>
 
-                    <label for="band">Band</label>
-                    <input type="text" name="band" id="band" value={this.state.band} onChange={(event) => this.handleChange(event)}></input>
+                        <label for="band">Band</label>
+                        <input type="text" name="band" id="band" value={this.state.band} onChange={(event) => this.handleChange(event)}></input>
 
-                    <label for="genre">Genre</label>
-                    <input type="text" name="genre" id="genre" value={this.state.genre} onChange={(event) => this.handleChange(event)}></input>
+                        <label for="genre">Genre</label>
+                        <input type="text" name="genre" id="genre" value={this.state.genre} onChange={(event) => this.handleChange(event)}></input>
 
-                    <button type="submit">Register</button>
-                </form>
+                        <button className="btn" type="submit">Register</button>
+                    </form>
+                </div>
             </div>
         );
     }

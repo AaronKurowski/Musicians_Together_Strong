@@ -1,0 +1,15 @@
+.reg-form-div {
+    color: white;
+    font-weight: 700;
+}
+
+.reg-form > button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.outer-reg-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

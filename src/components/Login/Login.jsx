@@ -14,10 +14,10 @@ class Login extends Component {
     render(){
         return(
             <div className="big-log">
-                <LoginForm />
                 <div className="link-div">
                     <Link style={{color: 'white'}} to="/register">Not Signed up? Register Here!</Link>
                 </div>
+                <LoginForm />  
             </div>
         );
     }
