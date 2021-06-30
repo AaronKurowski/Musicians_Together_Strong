@@ -48,6 +48,7 @@ class App extends Component {
     // }
     
     render(){
+        console.log(this.props)
         return(
             
                 <div id="grad" className="container-fluid main-div">
@@ -78,7 +79,6 @@ class App extends Component {
 }
 
 App.propTypes = {
-    getUser: PropTypes.func.isRequired,
     user: PropTypes.array.isRequired
 };
 

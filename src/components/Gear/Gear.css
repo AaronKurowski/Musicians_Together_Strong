@@ -1,0 +1,14 @@
+.gear-main-div {
+    background-color: black;
+    color: white !important;
+    display: block;
+    /* flex-direction: row; */
+}
+
+.table {
+    color: white !important;
+}
+
+.table-div {
+    display: block !important;
+}

@@ -19,7 +19,7 @@ export const createGear = (postGear) => dispatch => {
         price: postGear.price,
         imageurl: postGear.imageurl,
         condition: postGear.condition,
-        date: postGear.datelisted
+        dateListed: postGear.dateListed
     })
     .then(gear => dispatch({
         type: NEW_GEAR,

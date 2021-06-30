@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loginUser } from '../../actions/authAction';
 import PropTypes from 'prop-types';
+import './LoginForm.css';
 
 
 class LoginForm extends Component {
@@ -37,16 +38,18 @@ class LoginForm extends Component {
 
     render(){
         return(
-            <div className="login-form-div">
-                <form onSubmit={(event) => this.handleSubmit(event)}>
-                    <label for="userName">UserName</label>
-                    <input type="text" name="userName" id="userName" value={this.state.userName} onChange={(event) => this.handleChange(event)} />
+            <div className="outer-login-div">
+                <div className="login-form-div">
+                    <form className="login-form" onSubmit={(event) => this.handleSubmit(event)}>
+                        <label for="userName">UserName</label>
+                        <input type="text" name="userName" id="userName" value={this.state.userName} onChange={(event) => this.handleChange(event)} />
 
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" value={this.state.password} onChange={(event) => this.handleChange(event)} />
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" value={this.state.password} onChange={(event) => this.handleChange(event)} />
 
-                    <button type="submit">Login</button>
-                </form>
+                        <button className="btn" type="submit">Login</button>
+                    </form>
+                </div>
             </div>
         );
     }

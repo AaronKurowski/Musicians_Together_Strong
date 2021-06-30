@@ -1,0 +1,10 @@
+.big-log{
+    width:100%;
+    /* border: 1px solid black; */
+    display: block;
+    justify-content: center;
+}
+
+.reg-link {
+    color: white;
+}

@@ -18,10 +18,10 @@ class Nav extends Component {
                 <Link to='/'>Home</Link>
                 <Link to='/gearbag'>Gear Bag</Link>
 
-                {this.props.user == null &&
+                {!this.props.user.userId &&
                     <Link className="nav-link" to='/login'>Log In/Register</Link>
                 }
-                {this.props.user !== null &&
+                {this.props.user.userId &&
                     <Link onClick={() => this.props.logoutUser(this.props.user.userId)} style={{float: 'right'}} >Log Out</Link>     
                 }
                 {/* <Link style={{float: 'right'}} to='/register'>Register</Link> */}

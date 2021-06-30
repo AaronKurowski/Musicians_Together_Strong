@@ -15,7 +15,7 @@ class GearForm extends Component {
             price: null,
             imageurl: '',
             condition: '',
-            date: null,
+            dateListed: null,
             showModal: false
         };
     }
@@ -34,6 +34,7 @@ class GearForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+        debugger;
 
         const gear = {
             userId: this.state.userId,
@@ -42,7 +43,7 @@ class GearForm extends Component {
             price: parseInt(this.state.price),
             imageurl: this.state.imageurl,
             condition: this.state.condition,
-            date: this.state.datelisted
+            dateListed: this.state.dateListed
         };
 
         this.props.createGear(gear);
@@ -54,7 +55,7 @@ class GearForm extends Component {
             price: null,
             imageurl: '',
             condition: '',
-            date: null,
+            dateListed: null,
         });
     }
 
@@ -81,11 +82,11 @@ class GearForm extends Component {
                                 <label for="imageurl">ImageURL</label>
                                 <input type="text" name="imageurl" value={this.state.imageurl} onChange={(event) => this.handleChange(event)}></input>
                                
-                                <label for="condition">condition</label>
+                                <label for="condition">Condition</label>
                                 <input type="text" name="condition" value={this.state.condition} onChange={(event) => this.handleChange(event)}></input>
                                
-                                <label for="date">Date</label>
-                                <input type="date" name="date" value={this.state.date} onChange={(event) => this.handleChange(event)}></input>
+                                <label for="dateListed">Date</label>
+                                <input type="date" name="dateListed" value={this.state.dateListed} onChange={(event) => this.handleChange(event)}></input>
                                 
                                 <div className="modal-btn-div">
                                     <button onClick={() => this.handleModal()} className="btn modal-submit-btn" type="submit">Submit</button>
