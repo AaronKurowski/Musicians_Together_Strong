@@ -12,3 +12,7 @@ export const NEW_GEAR = 'NEW_GEAR';
 export const REGISTER_USER = 'REGISTER_USER';
 export const LOGIN_USER = 'LOGIN_USER';
 export const GET_USER = 'GET_USER';
+
+// music
+export const FETCH_SONGS = 'FETCH_SONGS';
+export const CREATE_SONG = 'CREATE_SONG';

@@ -32,7 +32,6 @@ export function loginUser(data) {
     return dispatch => {
         return axios.post('https://localhost:44394/api/authentication/login', data)
         .then(res => {
-            debugger;
             const token = res.data.token;
             localStorage.setItem('token', token);
             getUser(token);

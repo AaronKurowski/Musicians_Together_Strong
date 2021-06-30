@@ -1,8 +1,13 @@
 import React from 'react';
+import Songs from '../Songs/Songs.jsx';
 
 const Music = () => {
     return(
-        <h3>Music</h3>
+        <div>
+            
+            <Songs />
+            <h2>Music</h2>
+        </div>
     );
 }
 
