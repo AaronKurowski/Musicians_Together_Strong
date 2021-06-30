@@ -12,7 +12,7 @@ class Nav extends Component {
     }
 
     render(){
-        console.log(this.props);
+        console.log('user: ' + this.props.user)
         return(
             <div class="navbar">
                 <Link to='/'>Home</Link>
@@ -31,12 +31,12 @@ class Nav extends Component {
 }
 
 Nav.propTypes = {
-    loginUser: PropTypes.func.isRequired,
-    userToken: PropTypes.array.isRequired
+    user: PropTypes.array.isRequired,
+    getUser: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
-    userToken: state.userToken
+    user: state.user
 });
 
-export default connect(mapStateToProps, { loginUser })(Nav);
+export default connect(mapStateToProps, null)(Nav);

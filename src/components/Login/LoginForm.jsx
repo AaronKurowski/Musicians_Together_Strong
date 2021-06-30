@@ -29,7 +29,6 @@ class LoginForm extends Component {
         debugger;
 
         this.props.loginUser(credentials);
-        console.log(this.props);
         this.setState({
             userName: '',
             password: ''

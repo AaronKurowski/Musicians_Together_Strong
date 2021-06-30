@@ -19,36 +19,34 @@ import Register from './Registration/Register.jsx';
 import jwtDecode from 'jwt-decode';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { getUser } from '../actions/authAction';
+import axios from 'axios';
 
 
 class App extends Component {
-    
 
     componentWillMount = () => {
-        console.log(this.props);
         const jwt = localStorage.getItem('token');
         try{
+            debugger;
             const user = jwtDecode(jwt);
-            console.log(user.name + " logged in");
+            console.log(user.username + " is logged in");
+            // const fullUser = this.getUser(jwt);
+            // console.log(fullUser.data);
         } 
         catch{
-            console.log("User not logged in");
+            console.log("No one is logged in");
         }
     }
 
-    // componentDidMount = () => {
-    //     localStorage.removeItem('token');
-    //     console.log(localStorage);
-    //     // const jwt = localStorage.getItem('token');
-    //     try{
-    //         debugger;
-    //         // const user = jwtDecode(jwt);
-    //         // console.log("User logged in");
-    //     }catch{
-    //         console.log("User not logged in");
-    //     }
+    // getUser = async (token) => {
+    //     let response = await axios.get('https://localhost:44394/api/examples/user', {
+    //     headers: {"Authorization" : `Bearer ${token}`}
+    // })
+    //     console.log(response.data);
+    //     return response;
     // }
-
+    
     render(){
         return(
             
@@ -80,11 +78,12 @@ class App extends Component {
 }
 
 App.propTypes = {
-    userToken: PropTypes.array.isRequired,
-}
+    getUser: PropTypes.func.isRequired,
+    user: PropTypes.array.isRequired
+};
 
 const mapStateToProps = state => ({
-    userToken: state.userToken
+    user: state.user
 });
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, null)(App);
