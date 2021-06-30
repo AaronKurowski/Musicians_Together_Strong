@@ -32,7 +32,7 @@ Songs.propTypes = {
 };
 
 const mapStateToProps = state => ({
-    songs: state.songs.items
+    songs: state.music.items
 });
 
 export default connect(mapStateToProps, { fetchSongs })(Songs);

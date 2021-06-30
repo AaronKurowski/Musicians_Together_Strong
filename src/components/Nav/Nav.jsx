@@ -36,7 +36,7 @@ Nav.propTypes = {
 }
 
 const mapStateToProps = state => ({
-    user: state.user
+    user: state.auth.items
 });
 
 export default connect(mapStateToProps, null)(Nav);

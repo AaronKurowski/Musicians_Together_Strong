@@ -10,8 +10,8 @@ import ShowListings from './ShowListings/ShowListings.jsx';
 import Gear from './Gear/Gear.jsx';
 import Music from './Music/Music.jsx';
 
-import { Provider } from 'react-redux';
-import store from '../store.js';
+// import { Provider } from 'react-redux';
+// import store from '../store.js';
 import './App.css';
 import Nav from './Nav/Nav';
 import Login from './Login/Login.jsx';
@@ -19,8 +19,8 @@ import Register from './Registration/Register.jsx';
 import jwtDecode from 'jwt-decode';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getUser } from '../actions/authAction';
-import axios from 'axios';
+// import { getUser } from '../actions/authAction';
+// import axios from 'axios';
 
 
 class App extends Component {

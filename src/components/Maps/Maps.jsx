@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import {Map, GoogleApiWrapper} from 'google-maps-react';
+import {Map, GoogleApiWrapper, Marker} from 'google-maps-react';
 import './Maps.css';
 import mapsKey from '../../Keys/MapsKey.js';
+import MapMarker from './MapMarker.jsx';
 
 const mapStyles = {
     width: '500px',
@@ -17,8 +18,6 @@ class MapContainer extends Component {
         zoom: 8
     };
 
-    
-
     render(){
         console.log(mapsKey);
         return(
@@ -27,7 +26,15 @@ class MapContainer extends Component {
                 zoom={8}
                 style={mapStyles}
                 initialCenter={{ lat: 43.0388, lng: -87.9065 }}    
-            />
+            >
+                <Marker 
+                    key="marker_1"
+                    position={{
+                        lat: 43.0388,
+                        lng: -87.9065
+                    }}
+                />
+            </Map>
         );
     }
 }
