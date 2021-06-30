@@ -7,10 +7,8 @@ import { fetchSongs } from '../../actions/musicAction';
 
 class Songs extends Component {
     componentWillMount = () => {
-        debugger;
         this.props.fetchSongs();
     }
-
 
     render(){
         return(

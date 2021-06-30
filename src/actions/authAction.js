@@ -1,4 +1,4 @@
-import { REGISTER_USER, LOGIN_USER, GET_USER } from "./types";
+import { REGISTER_USER, LOGIN_USER, GET_USER, LOGOUT_USER } from "./types";
 import axios from 'axios';
 
 export const registerUser = (postRegister) => dispatch => {
@@ -60,4 +60,13 @@ export const getUser = (token) => async dispatch => {
             type: GET_USER,
             payload: user.data
         }));
+}
+
+export const logoutUser = (index) => dispatch => {
+    debugger;
+    dispatch({
+        type: LOGOUT_USER,
+        payload: index
+    })
+    localStorage.removeItem("token");
 }
