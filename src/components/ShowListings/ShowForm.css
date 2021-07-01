@@ -13,6 +13,7 @@ input {
     text-align: center !important;
     display: flex !important;
     align-items: center !important;
+    margin-bottom: 10px !important;
 }
 
 .modal-closer {

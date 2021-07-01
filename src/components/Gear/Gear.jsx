@@ -10,6 +10,7 @@ import Map from '../Maps/Maps.jsx';
 class Gear extends Component {
 
     componentWillMount = () => {
+        debugger;
         this.props.fetchGear();
     }
 
@@ -17,7 +18,7 @@ class Gear extends Component {
         console.log(this.props.gear);
 
         return this.props.gear.map((gear, index) => (
-            <tr onClick={() => console.log('clicked')}>
+            <tr className="table-row" onClick={() => console.log(gear.location)}>
                 <td>Seller</td>
                 <td>{gear.name}</td>
                 <td>${gear.price}</td>
@@ -25,11 +26,12 @@ class Gear extends Component {
                 <td>{gear.condition}</td>
                 <td>{gear.dateListed}</td>
                 <td>Average</td>
-                <td>Location</td>
-                <td>Email</td>
+                <td>{gear.location}</td>
+                <td>{gear.contact}</td>
             </tr>
         ));
     }
+
     render(){
         console.log(this.props);
         return(
@@ -62,7 +64,7 @@ class Gear extends Component {
                             </tbody>
                         </table> 
                     </div> 
-                    <Map />   
+                    {/* <Map />   */}
                 </div>
             </React.Fragment>
         );  

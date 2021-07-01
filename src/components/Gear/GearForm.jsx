@@ -10,14 +10,22 @@ class GearForm extends Component {
         super();
         this.state = {
             userId: null,
-            name: '',
+            item: '',
             description: '',
             price: null,
             imageurl: '',
             condition: '',
-            dateListed: null,
+            dateListed: '',
+            location: '',
+            contact: '',
             showModal: false
         };
+    }
+
+    getToday = () => {
+        let date = new Date();
+        const [month, day, year] = [date.getMonth(), date.getDate(), date.getFullYear()];
+        return `${month + 1}/${day}/${year}`
     }
 
     handleModal = () => {
@@ -38,24 +46,29 @@ class GearForm extends Component {
 
         const gear = {
             userId: this.state.userId,
-            name: this.state.name,
+            item: this.state.item,
             description: this.state.description,
             price: parseInt(this.state.price),
             imageurl: this.state.imageurl,
             condition: this.state.condition,
-            dateListed: this.state.dateListed
+            dateListed: this.getToday(),
+            location: this.state.location,
+            contact: this.state.contact
+
         };
 
         this.props.createGear(gear);
 
         this.setState({
             userId: null,
-            name: '',
+            item: '',
             description: '',
             price: null,
             imageurl: '',
             condition: '',
             dateListed: null,
+            location: '',
+            contact: ''
         });
     }
 
@@ -70,8 +83,8 @@ class GearForm extends Component {
                     <Modal.Body>
                         <form className="show-form" onSubmit={(event) => this.handleSubmit(event)}>
                             <div className="form-contents">
-                                <label for="name">Name</label>
-                                <input type="text" name="name" value={this.state.name} onChange={(event) => this.handleChange(event)}/>
+                                <label for="item">Item</label>
+                                <input type="text" name="item" value={this.state.item} onChange={(event) => this.handleChange(event)}/>
 
                                 <label for="description">Description</label>
                                 <input type="text" name="description" value={this.state.description} onChange={(event) => this.handleChange(event)}></input>
@@ -85,8 +98,14 @@ class GearForm extends Component {
                                 <label for="condition">Condition</label>
                                 <input type="text" name="condition" value={this.state.condition} onChange={(event) => this.handleChange(event)}></input>
                                
-                                <label for="dateListed">Date</label>
-                                <input type="date" name="dateListed" value={this.state.dateListed} onChange={(event) => this.handleChange(event)}></input>
+                                {/* <label for="dateListed">Date</label>
+                                <input type="date" name="dateListed" value={this.state.dateListed} onChange={(event) => this.handleChange(event)}></input> */}
+
+                                <label for="location">Location</label>
+                                <input type="text" name="location" value={this.state.location} onChange={(event) => this.handleChange(event)}></input>
+
+                                <label for="contact">Contact</label>
+                                <input type="text" name="contact" value={this.state.contact} onChange={(event) => this.handleChange(event)}></input>
                                 
                                 <div className="modal-btn-div">
                                     <button onClick={() => this.handleModal()} className="btn modal-submit-btn" type="submit">Submit</button>

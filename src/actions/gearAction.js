@@ -14,12 +14,14 @@ export const createGear = (postGear) => dispatch => {
     debugger;
     axios.post('https://localhost:44394/api/gear', {
         userId: postGear.userId,
-        name: postGear.name,
+        name: postGear.item,
         description: postGear.description,
         price: postGear.price,
         imageurl: postGear.imageurl,
         condition: postGear.condition,
-        dateListed: postGear.dateListed
+        dateListed: postGear.dateListed,
+        location: postGear.location,
+        contact: postGear.contact
     })
     .then(gear => dispatch({
         type: NEW_GEAR,
