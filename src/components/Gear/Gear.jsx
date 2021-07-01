@@ -6,19 +6,45 @@ import './Gear.css';
 import '../Maps/Maps.css';
 import GearForm from './GearForm.jsx';
 import Map from '../Maps/Maps.jsx';
+import Geocode from "react-geocode";
+import mapsKey from '../../Keys/MapsKey.js';
 
 class Gear extends Component {
+    constructor(){
+        super();
+        this.state = {
+            loc: {}
+        }
+    }
 
     componentWillMount = () => {
         debugger;
         this.props.fetchGear();
     }
 
+    Geocoder = async (param) => {
+        Geocode.setApiKey(mapsKey.geoKey);
+        debugger;
+
+        await Geocode.fromAddress(param).then(
+        (response) => {
+                console.log(response.results[0].geometry.location);
+                const coords = response.results[0].geometry.location;
+                this.setState({
+                    loc: coords
+                });
+            },
+            (error) => {
+                console.log(error);
+            }
+        );
+    }
+
     mapGear = () => {
         console.log(this.props.gear);
 
         return this.props.gear.map((gear, index) => (
-            <tr className="table-row" onClick={() => console.log(gear.location)}>
+            <tr className="table-row" onClick={() => this.Geocoder(gear.location)}>
                 <td>Seller</td>
                 <td>{gear.name}</td>
                 <td>${gear.price}</td>
@@ -34,6 +60,7 @@ class Gear extends Component {
 
     render(){
         console.log(this.props);
+        console.log(this.state.loc)
         return(
             <React.Fragment>
                 <GearForm />
@@ -64,7 +91,7 @@ class Gear extends Component {
                             </tbody>
                         </table> 
                     </div> 
-                    {/* <Map />   */}
+                    <Map loc={this.state.loc} />  
                 </div>
             </React.Fragment>
         );  
