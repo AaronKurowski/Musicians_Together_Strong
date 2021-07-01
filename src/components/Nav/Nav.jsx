@@ -14,7 +14,7 @@ class Nav extends Component {
     render(){
         console.log('user: ' + this.props.user)
         return(
-            <div class="navbar">
+            <div className="navbar">
                 <Link to='/'>Home</Link>
                 <Link to='/gearbag'>Gear Bag</Link>
 

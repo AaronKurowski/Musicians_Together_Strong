@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchGear } from '../../actions/gearAction';
 import './Gear.css';
+import '../Maps/Maps.css';
 import GearForm from './GearForm.jsx';
 import Map from '../Maps/Maps.jsx';
 
@@ -36,8 +37,11 @@ class Gear extends Component {
                 <GearForm />
 
                 {/* Weird interaction with maps. doesn't style, overlaps everything */}
-                {/* <Map /> */}
+                
                 <div className="gear-main-div">
+                    <div className="map-div">
+                        
+                    </div>
                     <div className="table-div">
                         <table className="table">
                             <thead>
@@ -57,7 +61,8 @@ class Gear extends Component {
                                 {this.mapGear()}
                             </tbody>
                         </table> 
-                    </div>    
+                    </div> 
+                    <Map />   
                 </div>
             </React.Fragment>
         );  

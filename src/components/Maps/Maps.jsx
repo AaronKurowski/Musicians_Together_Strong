@@ -5,8 +5,9 @@ import mapsKey from '../../Keys/MapsKey.js';
 import MapMarker from './MapMarker.jsx';
 
 const mapStyles = {
-    width: '100vw',
-    height: '500px',
+    width: '98.1%',
+    height: '550px',
+
 }
 
 class MapContainer extends Component {

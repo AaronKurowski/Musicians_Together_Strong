@@ -1,14 +1,23 @@
 .gear-main-div {
-    background-color: black;
+    /* background-color: purple; */
     color: white !important;
     display: block;
-    /* flex-direction: row; */
+    align-items: flex-end;
+    /* border: 1px solid magenta; */
+    height: 100vh;
 }
 
 .table {
     color: white !important;
+    height: 25%;
+    top: 100px;
+    background-color: black;
+    justify-content: baseline;
+    width: fit-content;
 }
 
 .table-div {
     display: block !important;
+    bottom: 0;
+    width: 100%;
 }
