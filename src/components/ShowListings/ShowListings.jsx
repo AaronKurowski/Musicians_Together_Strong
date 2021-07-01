@@ -14,26 +14,24 @@ class ShowListings extends Component {
         console.log(this.props.shows);
         debugger;
         return this.props.shows.map(show => (
-            
-
-                    <div className="card-body">
-                        <img className="card-img-top" src={show.imageURL} alt="show flyer"></img>
-                        <h4>{show.name}</h4> 
-                        <p>Lineup: {show.bands}</p>         
-                        <p>{show.description}</p>
-                        <p>${show.entryFee}</p>
-                        <p>{show.date}</p>
-                    </div>
+            <div className="card">
+                <div className="card-body">
+                    <img className="card-img-top" src={show.imageURL} alt="show flyer"></img>
+                    <h4>{show.name}</h4> 
+                    <p>Lineup: {show.bands}</p>         
+                    <p>{show.description}</p>
+                    <p>${show.entryFee}</p>
+                    <p>{show.date}</p>
+                </div>
+            </div>
         ));
     }
     render(){
         return(
-            <div className="container-fluid">
+            <div>
                 <ShowForm />
-                <div className="card-columns">
-                    <div className="card bg-light">
-                        {this.mapShows()}
-                    </div>
+                <div className="grid">
+                    {this.mapShows()}
                 </div>
             </div>
         );
