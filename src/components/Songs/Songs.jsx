@@ -13,11 +13,12 @@ class Songs extends Component {
     render(){
         return(
             <div>
-                <SongForm />
 
-                {this.props.songs.map(song => 
+                <SongForm />
+                
+                {/* {this.props.songs.map(song => 
                     <div>{song.title}</div>
-                )}
+                )} */}
 
             </div>
         );

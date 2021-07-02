@@ -18,14 +18,12 @@ class Gear extends Component {
     }
 
     componentWillMount = () => {
-        debugger;
         this.props.fetchGear();
     }
 
     Geocoder = async (param) => {
         Geocode.setApiKey(mapsKey.geoKey);
-        debugger;
-
+        
         await Geocode.fromAddress(param).then(
         (response) => {
                 console.log(response.results[0].geometry.location);
