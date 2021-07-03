@@ -1,0 +1,8 @@
+.search-div {
+    width: 100%;
+    height: auto;
+}
+
+.song-search {
+    display: flex;
+}
