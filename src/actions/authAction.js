@@ -20,14 +20,6 @@ export const registerUser = (postRegister) => dispatch => {
         }));
 }
 
-// export function loginUser(credentials) {
-//     return axios.post('https://localhost:44394/api/authentication/login', credentials).then(res => {
-//         const token = res.data.token;
-//         localStorage.setItem('token', token);
-//         getUser(token);
-//     })
-// }
-
 export function loginUser(data) {
     return dispatch => {
         return axios.post('https://localhost:44394/api/authentication/login', data)
@@ -38,19 +30,6 @@ export function loginUser(data) {
         });
     }
 }
-
-// export const loginUser = (postLogin) => dispatch => {
-//     debugger;
-//     axios.post('https://localhost:44394/api/authentication/login', {
-//         userName: postLogin.userName,
-//         password: postLogin.password
-//     })
-//         .then(userToken => dispatch({
-//             type: LOGIN_USER,
-//             payload: userToken.data
-//         }));
-//         console.log("made it here");
-// }
 
 export const getUser = (token) => async dispatch => {
     debugger;

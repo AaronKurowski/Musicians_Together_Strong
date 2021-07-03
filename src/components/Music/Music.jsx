@@ -8,11 +8,13 @@ const Music = () => {
 
     return(
         <div>
-            <Songs />
+            {/* <Songs /> */}
 
             <Profiles />
         </div>
     );
 }
+
+
 
 export default Music;

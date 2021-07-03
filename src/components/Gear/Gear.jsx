@@ -13,7 +13,8 @@ class Gear extends Component {
     constructor(){
         super();
         this.state = {
-            loc: {}
+            loc: {},
+            searchQuery: ''
         }
     }
 
@@ -62,7 +63,7 @@ class Gear extends Component {
         return(
             <React.Fragment>
                 <GearForm />
-
+                {/*GearSearch */}
                 {/* Weird interaction with maps. doesn't style, overlaps everything */}
                 
                 <div className="gear-main-div">

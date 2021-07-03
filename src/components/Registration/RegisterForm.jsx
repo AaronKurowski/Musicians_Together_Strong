@@ -43,6 +43,7 @@ class RegisterForm extends Component {
             genre: this.state.genre
         };
 
+        debugger;
         this.props.registerUser(user);
         alert("You have been registered successfully!")
 

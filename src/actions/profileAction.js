@@ -1,6 +1,7 @@
 import { FETCH_ALL_PROFILES, FETCH_PROFILE } from "./types";
 import axios from 'axios';
 
+
 export const fetchAllProfiles = () => dispatch => {
     axios.get('https://localhost:44394/api/profile')
         .then(profiles => dispatch({
