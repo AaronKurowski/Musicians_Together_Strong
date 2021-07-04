@@ -13,8 +13,8 @@ const Music = () => {
         return(
             <div className="outer-button-div">
                 <div className="button-div">
-                    <button onClick={setView("songs")} className="btn" type="submit">View Songs</button>
-                    <button onClick={setView("musicians")} className="btn" type="submit">View Musicians</button>
+                    <button className="btn" onClick={() => setView("songs")}>Songs</button>
+                    <button className="btn" onClick={() => setView("musicians")}>Musicians</button>
                 </div>
             </div>
 
@@ -25,6 +25,7 @@ const Music = () => {
         return(
             <div>
                 SONGS
+                <button className="btn" onClick={() => setView(null)}>Null</button>
 
                 <Songs />    
             </div>
@@ -35,6 +36,7 @@ const Music = () => {
         return(
             <div>
                 MUSICIANS
+                <button className="btn" onClick={() => setView(null)}>Null</button>
 
                 <Profiles />
             </div>

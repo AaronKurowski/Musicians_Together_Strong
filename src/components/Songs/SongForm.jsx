@@ -13,6 +13,7 @@ class SongForm extends Component {
             title: '',
             artist: '',
             album: '',
+            genre: '',
             audioFile: '',
             imageURL: '',
             releaseDate: null,
@@ -35,11 +36,13 @@ class SongForm extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
 
+        debugger;
         const song = {
             userId: this.props.user.userId,
             title: this.state.title,
             artist: this.state.artist,
             album: this.state.album,
+            genre: this.state.genre,
             audioFile: this.state.audioFile,
             imageURL: this.state.imageURL,
             releaseDate: this.state.releaseDate
@@ -53,6 +56,7 @@ class SongForm extends Component {
             title: '',
             artist: '',
             album: '',
+            genre: '',
             audioFile: '',
             imageURL: '',
             releaseDate: null,
@@ -80,6 +84,9 @@ class SongForm extends Component {
                                 <label for="album">Album</label>
                                 <input type="text" name="album" id="album" value={this.state.album} onChange={(event) => this.handleChange(event)}/>
 
+                                <label for="genre">Genre</label>
+                                <input type="text" name="genre" id="genre" value={this.state.genre} onChange={(event) => this.handleChange(event)}></input>
+
                                 <label for="audioFile">Audio File</label>
                                 <input type="text" name="audioFile" id="audioFile" value={this.state.audioFile} onChange={(event) => this.handleChange(event)}/>
 
@@ -87,7 +94,7 @@ class SongForm extends Component {
                                 <input type="text" name="imageURL" id="imageURL" value={this.state.imageURL} onChange={(event) => this.handleChange(event)}/>
 
                                 <label for="releaseDate">Release Date</label>
-                                <input type="text" name="releaseDate" id="releaseDate" value={this.state.releaseDate} onChange={(event) => this.handleChange(event)}/>
+                                <input type="date" name="releaseDate" id="releaseDate" value={this.state.releaseDate} onChange={(event) => this.handleChange(event)}/>
                                 
                                 <div className="modal-btn-div">
                                     <button className="btn modal-submit-btn" type="submit" onClick={() => this.handleModal()}>Post Song!</button>
@@ -103,8 +110,13 @@ class SongForm extends Component {
 }
 
 SongForm.propTypes = {
-    createSong: PropTypes.func.isRequired
+    createSong: PropTypes.func.isRequired,
+    user: PropTypes.array.isRequired
 };
 
+const mapStateToProps = state => ({
+    user: state.auth.items
+});
 
-export default connect(null, { createSong })(SongForm);
+
+export default connect(mapStateToProps, { createSong })(SongForm);

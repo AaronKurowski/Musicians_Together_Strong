@@ -24,31 +24,39 @@ class Songs extends Component {
         });
     }
 
-    // filterSongs = (songs, query) => {
-    //     if(!this.state.searchQuery){
-    //         return this.props.songs;
-    //     }
-    //     let filteredSongs = songs.filter((song) => {
-    //         if(song.genre.toLowerCase() == query.toLowerCase())
-    //     })
-    // }
+    filterSongs = (songs, query) => {
+        if(!query){
+            return songs;
+        }
+        let filteredSongs = songs.filter((song) => {
+            if(song.genre.toLowerCase() == query.toLowerCase()){
+                return true;
+            }
+        });
+        return filteredSongs;
+    }
 
     render(){
+        const filteredSongs = this.filterSongs(this.props.songs, this.state.searchQuery)
         return(
             <div>
 
                 <SongForm />
 
                 <div className="search-div">
-                    <label for="genre">Select a genre to search</label>
-                    <select name="genre" value={this.state.value} onChange={(event) => this.handleChange(event)}>
-                        <option disabled selected value> --- select an option ---</option>
-                        <option value="metal">Metal</option>
-                        <option value="punk">Punk</option>
-                        <option value="blues">Blues</option>
-                        <option value="pop">Pop</option>
-                        <option value="rap">Rap</option>
-                    </select>
+                    <form onSubmit={(event) => this.handleSubmit(event)}>
+                        <label for="searchQuery">Select a genre to search</label>
+                        <select name="searchQuery" value={this.state.value} onChange={(event) => this.handleChange(event)}>
+                            <option disabled selected value> --- select an option ---</option>
+                            <option value="metal">Metal</option>
+                            <option value="punk">Punk</option>
+                            <option value="blues">Blues</option>
+                            <option value="pop">Pop</option>
+                            <option value="rap">Rap</option>
+                            <option value="electronic">Electronic</option>
+                        </select>
+                        {/* <button className="btn" type="submit">Search Genres</button> */}
+                    </form>
                 </div>
 
                 {/* <div className="search-div">
@@ -58,9 +66,9 @@ class Songs extends Component {
                     </form>
                 </div> */}
                 
-                {/* {this.props.songs.map(song => 
+                {filteredSongs.map(song => 
                     <div>{song.title}</div>
-                )} */}
+                )}
 
             </div>
         );
