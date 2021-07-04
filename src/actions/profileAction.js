@@ -1,4 +1,4 @@
-import { FETCH_ALL_PROFILES, FETCH_PROFILE } from "./types";
+import { FETCH_ALL_PROFILES, FETCH_PROFILE, UPDATE_PROFILE } from "./types";
 import axios from 'axios';
 
 
@@ -16,4 +16,18 @@ export const fetchProfile = (userId) => dispatch => {
             type: FETCH_PROFILE,
             payload: profile.data
         }))
+}
+
+export const updateProfile = (userId, info) => dispatch => {
+    debugger;
+    axios.put(`https://localhost:44394/api/profile/${userId}`, {
+        firstName: info.firstName,
+        lastName: info.lastName,
+        email: info.email,
+        genre: info.genre,
+        instrument: info.instrument
+    }).then(user => dispatch({
+        type: UPDATE_PROFILE,
+        payload: user.data
+    }))
 }

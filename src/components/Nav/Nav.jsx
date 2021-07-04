@@ -17,13 +17,16 @@ class Nav extends Component {
         return(
             <div className="navbar">
                 <Link to='/'>Home</Link>
-                <Link to='/gearbag'>Gear Bag</Link>
+                {/* <Link to='/gearbag'>Gear Bag</Link> */}
 
                 {!this.props.user &&
                     <Link className="nav-link" to='/login'>Log In/Register</Link> 
                 }
                 {this.props.user &&
-                    <Link onClick={() => this.props.logoutUser(this.props.user.userId)} style={{float: 'right'}} >Log Out</Link>     
+                    <React.Fragment>
+                        <Link to='/userprofile'>{this.props.user.userName}'s Profile</Link>
+                        <Link onClick={() => this.props.logoutUser(this.props.user.userId)} style={{float: 'right'}} >Log Out</Link>
+                    </React.Fragment>  
                 }
                 {/* <Link style={{float: 'right'}} to='/register'>Register</Link> */}
             </div>

@@ -21,3 +21,4 @@ export const CREATE_SONG = 'CREATE_SONG';
 // profiles
 export const FETCH_ALL_PROFILES = 'FETCH_ALL_PROFILES';
 export const FETCH_PROFILE = 'FETCH_PROFILE';
+export const UPDATE_PROFILE = 'UPDATE_PROFILE';
