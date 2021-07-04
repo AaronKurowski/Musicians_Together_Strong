@@ -17,6 +17,7 @@ export const LOGOUT_USER = 'LOGOUT_USER';
 // music
 export const FETCH_SONGS = 'FETCH_SONGS';
 export const CREATE_SONG = 'CREATE_SONG';
+export const FETCH_USER_SONGS = 'FETCH_USERS_SONGS';
 
 // profiles
 export const FETCH_ALL_PROFILES = 'FETCH_ALL_PROFILES';

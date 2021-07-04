@@ -38,7 +38,7 @@ class SongForm extends Component {
 
         debugger;
         const song = {
-            userId: this.props.user.userId,
+            userId: this.props.user.id,
             title: this.state.title,
             artist: this.state.artist,
             album: this.state.album,
@@ -48,6 +48,7 @@ class SongForm extends Component {
             releaseDate: this.state.releaseDate
         };
 
+        debugger;
         // redux call
         this.props.createSong(song);
 

@@ -1,4 +1,4 @@
-import { FETCH_SONGS, CREATE_SONG } from "./types";
+import { FETCH_SONGS, CREATE_SONG, FETCH_USER_SONGS } from "./types";
 import axios from 'axios';
 
 export const fetchSongs = () => dispatch => {
@@ -25,4 +25,12 @@ export const createSong = (postSong) => dispatch => {
         type: CREATE_SONG,
         payload: song.data
     }));
+}
+
+export const fetchUserSongs = (userId) => dispatch => {
+    axios.get(`https://localhost:44394/api/song/${userId}`)
+        .then(songs => dispatch({
+            type: FETCH_USER_SONGS,
+            payload: songs.data
+        }));
 }

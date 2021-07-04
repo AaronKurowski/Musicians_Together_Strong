@@ -21,7 +21,7 @@ class Profiles extends Component {
         const filteredProfiles = this.filterProfiles(this.props.profiles, this.state.searchQuery)
         return(
             <div className="inner-profile-div">
-                {filteredProfiles.map((profile, index) => 
+                {filteredProfiles.map((profile) => 
                     <h6>{profile.userName}</h6>
 
                 )}

@@ -1,4 +1,4 @@
-import { FETCH_SONGS, CREATE_SONG } from "../actions/types";
+import { FETCH_SONGS, CREATE_SONG, FETCH_USER_SONGS } from "../actions/types";
 
 const initialState = {
     items: []
@@ -16,6 +16,11 @@ export default function(state = initialState, action){
                 ...state,
                 items: [action.payload, ...state.items]
             };
+        case FETCH_USER_SONGS:
+            return{
+                ...state,
+                items: action.payload
+            }
         default:
             return state;
     }

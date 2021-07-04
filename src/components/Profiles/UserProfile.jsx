@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import './UserProfile.css';
 import {Modal, Button} from 'react-bootstrap';
 import { updateProfile } from '../../actions/profileAction';
+import { fetchSongs } from '../../actions/musicAction';
 
 
 class UserProfile extends Component {
@@ -17,6 +18,10 @@ class UserProfile extends Component {
             instrument: '',
             showModal: false
         };
+    }
+
+    componentWillMount = () => {
+        this.props.fetchSongs();
     }
 
     handleModal = () => {
@@ -53,8 +58,29 @@ class UserProfile extends Component {
         })
     }
 
+    filterSongs = (songs, userId) => {
+        let filteredSongs = songs.filter((song) => {
+            if(song.userId == userId){
+                return true;
+            }
+        })
+        return filteredSongs;
+    }
+
+    mapSongs = () => {
+        const filteredSongs = this.filterSongs(this.props.songs, this.props.user.id);
+        return(
+            <div>
+                {filteredSongs.map((song) => 
+                    <div>{song.title}</div>
+                )}
+            </div>
+        );
+    }
+
     render(){
         console.log(this.props.user);
+        console.log(this.props.songs);
         return(
             <div className="outer-profile-div">
                 <h2>Hello {this.props.user.userName}</h2>
@@ -92,6 +118,7 @@ class UserProfile extends Component {
                     <Modal.Footer><Button className="modal-closer" onClick={() => this.handleModal()}>Close</Button></Modal.Footer>
                 </Modal>
 
+                {this.mapSongs()}
 
             </div>
         );
@@ -100,11 +127,13 @@ class UserProfile extends Component {
 
 UserProfile.propTypes = {
     user: PropTypes.array.isRequired,
-    updateProfile: PropTypes.func.isRequired
+    updateProfile: PropTypes.func.isRequired,
+    fetchSongs: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
-    user: state.auth.items
+    user: state.auth.items,
+    songs: state.music.items
 });
 
-export default connect(mapStateToProps, { updateProfile })(UserProfile);
+export default connect(mapStateToProps, { updateProfile, fetchSongs })(UserProfile);
