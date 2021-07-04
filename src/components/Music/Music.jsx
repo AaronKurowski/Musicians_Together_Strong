@@ -8,20 +8,39 @@ import Search from '../Search/Search.jsx';
 const Music = () => {
     const[view, setView] = useState(null);
 
+    console.log(view);
     if(view == null){
         return(
-            <div>View is null</div>
-            
+            <div className="outer-button-div">
+                <div className="button-div">
+                    <button onClick={setView("songs")} className="btn" type="submit">View Songs</button>
+                    <button onClick={setView("musicians")} className="btn" type="submit">View Musicians</button>
+                </div>
+            </div>
+
         );
     }
-    return(
-        <div>
 
-            <Songs />
+    else if(view == "songs"){
+        return(
+            <div>
+                SONGS
 
-            <Profiles />
-        </div>
-    );
+                <Songs />    
+            </div>
+        );
+    }
+
+    else if(view == "musicians"){
+        return(
+            <div>
+                MUSICIANS
+
+                <Profiles />
+            </div>
+
+        );
+    }
 }
 
 export default Music;

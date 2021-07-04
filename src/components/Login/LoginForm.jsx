@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loginUser } from '../../actions/authAction';
+import { loginUser, getUser } from '../../actions/authAction';
 import PropTypes from 'prop-types';
 import './LoginForm.css';
 
@@ -56,8 +56,9 @@ class LoginForm extends Component {
 }
 
 LoginForm.propTypes = {
-    loginUser: PropTypes.func.isRequired
+    loginUser: PropTypes.func.isRequired,
+    getUser: PropTypes.func.isRequired
 };
 
 
-export default connect(null, { loginUser })(LoginForm);
+export default connect(null, { loginUser, getUser })(LoginForm);

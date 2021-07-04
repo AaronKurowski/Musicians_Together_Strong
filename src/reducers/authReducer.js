@@ -24,7 +24,7 @@ export default function(state = initialState, action){
         case LOGOUT_USER:
             return{
                 ...state,
-                items: state.items.filter((item, index) => index !== action.payload)
+                items: action.payload
             }
         default:
             return state;

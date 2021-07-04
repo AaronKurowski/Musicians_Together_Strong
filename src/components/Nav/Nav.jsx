@@ -13,15 +13,16 @@ class Nav extends Component {
 
     render(){
         console.log('user: ' + this.props.user)
+        console.log(this.props)
         return(
             <div className="navbar">
                 <Link to='/'>Home</Link>
                 <Link to='/gearbag'>Gear Bag</Link>
 
-                {!this.props.user.userId &&
-                    <Link className="nav-link" to='/login'>Log In/Register</Link>
+                {!this.props.user &&
+                    <Link className="nav-link" to='/login'>Log In/Register</Link> 
                 }
-                {this.props.user.userId &&
+                {this.props.user &&
                     <Link onClick={() => this.props.logoutUser(this.props.user.userId)} style={{float: 'right'}} >Log Out</Link>     
                 }
                 {/* <Link style={{float: 'right'}} to='/register'>Register</Link> */}

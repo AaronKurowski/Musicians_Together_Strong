@@ -19,7 +19,7 @@ import Register from './Registration/Register.jsx';
 import jwtDecode from 'jwt-decode';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-// import { getUser } from '../actions/authAction';
+import { getUser } from '../actions/authAction';
 // import axios from 'axios';
 
 
@@ -31,8 +31,7 @@ class App extends Component {
             debugger;
             const user = jwtDecode(jwt);
             console.log(user.username + " is logged in");
-            // const fullUser = this.getUser(jwt);
-            // console.log(fullUser.data);
+            this.props.getUser(jwt);
         } 
         catch{
             console.log("No one is logged in");
@@ -79,11 +78,12 @@ class App extends Component {
 }
 
 App.propTypes = {
-    user: PropTypes.array.isRequired
+    user: PropTypes.array.isRequired,
+    getUser: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
     user: state.user
 });
 
-export default connect(mapStateToProps, null)(App);
+export default connect(mapStateToProps, {getUser})(App);
