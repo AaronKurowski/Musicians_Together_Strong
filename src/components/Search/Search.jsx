@@ -1,19 +1,31 @@
 import React, { useState } from 'react';
-import { propTypes } from 'react-bootstrap/esm/Image';
 
 
 const Search = () => {
     const [searchQuery, setSearchQuery] = useState("");
 
+
+
     
     return(
         <div className="search-div">
-            <form onSubmit={(event) => this.handleSubmit(event)}>
-                <input type="text" value={searchQuery} placeholder="Search..." onChange={(event) => setSearchQuery(event.target.value)}></input>
-                <button type="Submit">Search</button>
-            </form>
-
-        </div>
+                    <form>
+                        <label for="searchQuery">Search user by their instrument</label>
+                        <select name="searchQuery" value={this.state.value} onChange={(event) => this.handleChange(event)}>
+                            <option disabled selected value> --- select an option ---</option>
+                            <option value="guitar">Guitar</option>
+                            <option value="bass">Bass</option>
+                            <option value="drums">Drums</option>
+                            <option value="vocals">Vocals</option>
+                            <option value="cello">Cello</option>
+                            <option value="flute">Flute</option>
+                            <option value="keyboards">Keyboards</option>
+                            <option value="saxophone">Saxophone</option>
+                            <option value="french horn">French Horn</option>
+                            <option value="egg shakers">Egg Shakers</option>
+                        </select>
+                    </form>
+                </div>
     );
 }
 

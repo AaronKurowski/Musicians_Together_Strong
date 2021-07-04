@@ -44,7 +44,7 @@ class Songs extends Component {
                 <SongForm />
 
                 <div className="search-div">
-                    <form onSubmit={(event) => this.handleSubmit(event)}>
+                    <form>
                         <label for="searchQuery">Select a genre to search</label>
                         <select name="searchQuery" value={this.state.value} onChange={(event) => this.handleChange(event)}>
                             <option disabled selected value> --- select an option ---</option>
