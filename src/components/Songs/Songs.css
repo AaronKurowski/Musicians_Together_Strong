@@ -1,8 +1,16 @@
 .search-div {
     width: 100%;
     height: auto;
+    color: white;
+    font-weight: 700;
 }
 
 .song-search {
     display: flex;
+
+}
+
+.musician-div {
+    color: white;
+    font-weight: 700;
 }

@@ -8,10 +8,10 @@ import Search from '../Search/Search.jsx';
 const Music = () => {
     const[view, setView] = useState(null);
 
-    console.log(view);
     if(view == null){
         return(
             <div className="outer-button-div">
+                <h3>Search Songs or Musicians?</h3>
                 <div className="button-div">
                     <button className="btn" onClick={() => setView("songs")}>Songs</button>
                     <button className="btn" onClick={() => setView("musicians")}>Musicians</button>
@@ -24,8 +24,8 @@ const Music = () => {
     else if(view == "songs"){
         return(
             <div>
-                SONGS
-                <button className="btn" onClick={() => setView(null)}>Null</button>
+                <h3>Songs</h3>
+                <button className="btn" onClick={() => setView(null)}>Back</button>
 
                 <Songs />    
             </div>
@@ -35,8 +35,9 @@ const Music = () => {
     else if(view == "musicians"){
         return(
             <div>
-                MUSICIANS
-                <button className="btn" onClick={() => setView(null)}>Null</button>
+                <button className="btn" onClick={() => setView(null)}>Back</button>
+
+                <h3>Musicians</h3>
 
                 <Profiles />
             </div>

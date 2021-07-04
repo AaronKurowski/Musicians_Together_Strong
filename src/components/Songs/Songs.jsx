@@ -39,7 +39,7 @@ class Songs extends Component {
     render(){
         const filteredSongs = this.filterSongs(this.props.songs, this.state.searchQuery)
         return(
-            <div>
+            <div className="musician-div">
 
                 <SongForm />
 
@@ -55,16 +55,8 @@ class Songs extends Component {
                             <option value="rap">Rap</option>
                             <option value="electronic">Electronic</option>
                         </select>
-                        {/* <button className="btn" type="submit">Search Genres</button> */}
                     </form>
                 </div>
-
-                {/* <div className="search-div">
-                    <form className="song-search" onSubmit={(event) => this.handleSubmit(event)}>
-                        <input type="text" name="searchQuery" value={this.state.searchQuery} placeholder="Search Songs" onChange={(event) => this.handleChange(event)}></input>
-                        <button type="Submit">Search</button>
-                    </form>
-                </div> */}
                 
                 {filteredSongs.map(song => 
                     <div>{song.title}</div>
