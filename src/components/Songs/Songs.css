@@ -32,11 +32,11 @@
     border: 1px solid whitesmoke !important;
     color: white !important;
     min-height: 55px;
-    max-width: inherit;
-    justify-content: center !important;
     width: 55%;
     align-self: center;
     margin-bottom: 10px;
+    display: flex !important;
+    justify-content: space-between !important;
 }
 
 .hover:hover {

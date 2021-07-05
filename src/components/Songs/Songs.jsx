@@ -62,8 +62,12 @@ class Songs extends Component {
                 <ul class="list-group">
                     {filteredSongs.map(song =>  
                         <li className="hover list-group-item">
-                            {song.title}
+                            <div>
+                                {song.title} by {song.artist}<br/>
+                            </div>
+                            <div className="genre-div">{song.genre}</div>
                             
+
                         </li>
                     )}
                 </ul>
