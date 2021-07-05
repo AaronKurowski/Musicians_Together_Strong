@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchSongs } from '../../actions/musicAction';
 import './Songs.css';
+import { Link } from 'react-router-dom';
+import { fetchProfile } from '../../actions/profileAction';
 
 
 class Songs extends Component {
@@ -60,15 +62,16 @@ class Songs extends Component {
                 
                 {/* this div below needs to be clickable to redirect to the user who posted it */}
                 <ul class="list-group">
+                    {/* list-group-item needs to be clickable */}
                     {filteredSongs.map(song =>  
-                        <li className="hover list-group-item">
-                            <div>
-                                {song.title} by {song.artist}<br/>
-                            </div>
-                            <div className="genre-div">{song.genre}</div>
-                            
-
-                        </li>
+                        <Link className="profile-link" to={{pathname: "/viewprofile", state: {id: song.userId}}}>
+                            <li className="hover list-group-item">
+                                <div>
+                                    {song.title} by {song.artist}<br/>
+                                </div>
+                                <div className="genre-div">{song.genre}</div>
+                            </li>
+                        </Link>
                     )}
                 </ul>
                 
@@ -79,11 +82,12 @@ class Songs extends Component {
 
 Songs.propTypes = {
     fetchSongs: PropTypes.func.isRequired,
-    songs: PropTypes.array.isRequired
+    songs: PropTypes.array.isRequired,
+    fetchProfile: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
     songs: state.music.items
 });
 
-export default connect(mapStateToProps, { fetchSongs })(Songs);
+export default connect(mapStateToProps, { fetchSongs, fetchProfile })(Songs);

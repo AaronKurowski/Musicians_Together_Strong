@@ -49,3 +49,9 @@
 .genre-form {
     margin-left: 25px;
 }
+
+.profile-link {
+    display: flex;
+    justify-content: center;
+    color: transparent;
+}

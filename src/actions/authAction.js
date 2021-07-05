@@ -28,7 +28,9 @@ export function loginUser(data) {
             const token = res.data.token;
             localStorage.setItem('token', token);
             getUser(token);
+            alert("You have logged in successfully!");
         });
+        
     }
 }
 
@@ -40,6 +42,7 @@ export const getUser = (token) => async dispatch => {
             type: GET_USER,
             payload: [user.data]
         }));
+        
 }
 
 export const logoutUser = () => dispatch => {

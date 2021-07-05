@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {
     BrowserRouter as Router,
     Switch,
-    Route
+    Route,
+    withRouter
 } from "react-router-dom";
 
 import Home from './Home/Home.jsx';
@@ -19,6 +20,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getUser } from '../actions/authAction';
 import UserProfile from './Profiles/UserProfile.jsx';
+import ViewProfile from './Profiles/ViewProfile.jsx';
 
 
 class App extends Component {
@@ -54,6 +56,7 @@ class App extends Component {
                     <Route exact path="/login" component={Login}/>
                     <Route exact path="/gearbag" /* component={gearbag} */ />
                     <Route exact path="/userprofile" component={UserProfile}/>
+                    <Route exact path="/viewprofile" component={ViewProfile} />
                     <Route exact path="/listings" component={ShowListings}/>
                     <Route exact path="/gear" component={Gear}/>
                     <Route exact path="/music" component={Music}/>
@@ -73,4 +76,4 @@ const mapStateToProps = state => ({
     user: state.user
 });
 
-export default connect(mapStateToProps, {getUser})(App);
+export default withRouter(connect(mapStateToProps, {getUser})(App));

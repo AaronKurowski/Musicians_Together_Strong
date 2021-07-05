@@ -1,4 +1,4 @@
-import { FETCH_ALL_PROFILES, FETCH_PROFILE, UPDATE_PROFILE } from "./types";
+import { FETCH_ALL_PROFILES, FETCH_PROFILE, REMOVE_PROFILE, UPDATE_PROFILE } from "./types";
 import axios from 'axios';
 
 
@@ -30,4 +30,12 @@ export const updateProfile = (userId, info) => dispatch => {
         type: UPDATE_PROFILE,
         payload: user.data
     }))
+}
+
+export const removeProfile = () => dispatch => {
+    debugger;
+    dispatch({
+        type: REMOVE_PROFILE,
+        payload: []
+    })
 }
