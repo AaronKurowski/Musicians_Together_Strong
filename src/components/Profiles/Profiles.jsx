@@ -20,12 +20,16 @@ class Profiles extends Component {
     mapProfiles = () => {
         const filteredProfiles = this.filterProfiles(this.props.profiles, this.state.searchQuery)
         return(
-            <div className="inner-profile-div">
-                {filteredProfiles.map((profile) => 
-                    <h6>{profile.userName}</h6>
-
+            <ul className="list-group">
+                {filteredProfiles.map((profile) =>  
+                    <li className="hover list-group-item">
+                        <div>
+                            {profile.firstName} {profile.lastName}<br />
+                        </div>
+                        <div className="profile-div">{profile.genre} {profile.instrument}</div>                    
+                    </li>
                 )}
-            </div>
+            </ul>
         );
     }
 
@@ -51,8 +55,8 @@ class Profiles extends Component {
         return(
             <div className="outer-profile-div">
                 <div className="search-div">
-                    <form>
-                        <label for="searchQuery">Search user by their instrument</label>
+                    <form className="instrument-form">
+                        <label for="searchQuery">Search user by their instrument</label> <br />
                         <select name="searchQuery" value={this.state.value} onChange={(event) => this.handleChange(event)}>
                             <option disabled selected value> --- select an option ---</option>
                             <option value="guitar">Guitar</option>
