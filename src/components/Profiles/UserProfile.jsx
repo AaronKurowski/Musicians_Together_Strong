@@ -70,20 +70,6 @@ class UserProfile extends Component {
     mapSongs = () => {
         const filteredSongs = this.filterSongs(this.props.songs, this.props.user[0].id);
         return(
-
-            // <ul class="list-group">
-            //         {filteredSongs.map(song =>  
-            //             <li className="hover list-group-item">
-            //                 <div>
-            //                     {song.title} by {song.artist}<br/>
-            //                 </div>
-            //                 <div className="genre-div">{song.genre}</div>
-                            
-
-            //             </li>
-            //         )}
-            //     </ul>
-
             <div>
                 <h3>Songs you've posted:</h3>
                 <ul className="list-group">
@@ -96,13 +82,6 @@ class UserProfile extends Component {
                     )}
                 </ul>
             </div>
-
-            // <div>
-            //      <h3 className="profile-songs">Songs you've posted: </h3>
-            //     {filteredSongs.map((song) => 
-            //         <div>{song.title}</div>
-            //     )}
-            // </div>
         );
     }
 
