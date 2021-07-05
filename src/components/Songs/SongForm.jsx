@@ -37,7 +37,6 @@ class SongForm extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
 
-        debugger;
         const song = {
             userId: this.props.user.id,
             title: this.state.title,
@@ -49,8 +48,6 @@ class SongForm extends Component {
             releaseDate: this.state.releaseDate
         };
 
-        debugger;
-        // redux call
         this.props.createSong(song);
 
         this.setState({

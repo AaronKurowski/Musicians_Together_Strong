@@ -10,6 +10,7 @@ import Map from '../Maps/Maps.jsx';
 import Geocode from "react-geocode";
 import mapsKey from '../../Keys/MapsKey.js';
 
+
 class Gear extends Component {
     constructor(){
         super();
@@ -21,8 +22,7 @@ class Gear extends Component {
 
     componentWillMount = () => {
         this.props.fetchGear();
-        this.props.fetchAllProfiles();
-        
+        this.props.fetchAllProfiles();    
     }
 
     Geocoder = async (param) => {
@@ -44,7 +44,6 @@ class Gear extends Component {
 
     // method that returns the seller from gears foreign id
     getSeller = (userId) => {
-        
         for(let i = 0; i < this.props.profiles.length; i++){
             if(this.props.profiles[i].id == userId){
                 return this.props.profiles[i].userName
@@ -71,13 +70,10 @@ class Gear extends Component {
     }
 
     render(){
-        console.log(this.props);
-        console.log(this.state.loc)
         return(
             <React.Fragment>
                 <GearForm />
                 {/*GearSearch */}
-                {/* Weird interaction with maps. doesn't style, overlaps everything */}
                 
                 <div className="gear-main-div">
                     <div className="map-div">
@@ -103,7 +99,7 @@ class Gear extends Component {
                             </tbody>
                         </table> 
                     </div> 
-                    {/* <Map refs loc={this.state.loc} />   */}
+                    <Map refs loc={this.state.loc} />  
                 </div>
             </React.Fragment>
         );  

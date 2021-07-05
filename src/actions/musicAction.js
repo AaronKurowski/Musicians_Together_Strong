@@ -2,7 +2,6 @@ import { FETCH_SONGS, CREATE_SONG, FETCH_USER_SONGS } from "./types";
 import axios from 'axios';
 
 export const fetchSongs = () => dispatch => {
-    debugger;
     axios.get('https://localhost:44394/api/song')
         .then(songs => dispatch({
             type: FETCH_SONGS,

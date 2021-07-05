@@ -5,6 +5,7 @@ import { createGear } from '../../actions/gearAction';
 import PropTypes from 'prop-types';
 import { Button, Modal } from 'react-bootstrap';
 
+
 class GearForm extends Component {
     constructor(){
         super();

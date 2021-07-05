@@ -1,6 +1,7 @@
 import { FETCH_SHOWS, NEW_SHOW } from "./types";
 import axios from 'axios';
 
+
 //each action creator is a function
 //thunk middleware allows us to call dispatch function direclty so we can make async requests
 //dispatch is like resolving a promise; dispatch allows for sending of data

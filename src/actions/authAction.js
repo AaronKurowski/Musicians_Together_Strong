@@ -3,7 +3,6 @@ import axios from 'axios';
 import authReducer from "../reducers/authReducer";
 
 export const registerUser = (postRegister) => dispatch => {
-    debugger;
     axios.post('https://localhost:44394/api/authentication', {
         firstName: postRegister.firstName,
         lastName: postRegister.lastName,
@@ -29,13 +28,11 @@ export function loginUser(data) {
             localStorage.setItem('token', token);
             getUser(token);
             alert("You have logged in successfully!");
-        });
-        
+        }); 
     }
 }
 
 export const getUser = (token) => async dispatch => {
-    debugger;
     await axios.get('https://localhost:44394/api/examples/user', {
         headers: {"Authorization" : `Bearer ${token}`}
     }).then(user => dispatch({
@@ -46,7 +43,6 @@ export const getUser = (token) => async dispatch => {
 }
 
 export const logoutUser = () => dispatch => {
-    debugger;
     dispatch({
         type: LOGOUT_USER,
         payload: {}

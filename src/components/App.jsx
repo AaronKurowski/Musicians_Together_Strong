@@ -37,7 +37,6 @@ class App extends Component {
     }
     
     render(){
-        console.log(this.props)
         return(
             <div id="grad" className="container-fluid main-div">
                 <Nav />
@@ -45,13 +44,6 @@ class App extends Component {
 
                 <Switch>
                     <Route exact path="/" component={Home}/>
-                    {/* <Route render={props => {
-                        if(!user){
-                            return <Redirect to="/login" />
-                        } else{
-                            return <ProfileScreen {...props} user={user} />
-                        }
-                    }} /> */}
                     <Route exact path='/register' component={Register}></Route>
                     <Route exact path="/login" component={Login}/>
                     <Route exact path="/gearbag" /* component={gearbag} */ />
@@ -59,8 +51,7 @@ class App extends Component {
                     <Route exact path="/viewprofile" component={ViewProfile} />
                     <Route exact path="/listings" component={ShowListings}/>
                     <Route exact path="/gear" component={Gear}/>
-                    <Route exact path="/music" component={Music}/>
-                        
+                    <Route exact path="/music" component={Music}/> 
                 </Switch>
             </div>
         );

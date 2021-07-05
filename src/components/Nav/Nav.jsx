@@ -7,9 +7,6 @@ import { logoutUser } from '../../actions/authAction';
 
 
 class Nav extends Component {
-    componentWillMount = () => {
-
-    }
 
     render(){
         console.log('user: ' + this.props.user)
@@ -28,7 +25,6 @@ class Nav extends Component {
                         <Link onClick={() => this.props.logoutUser(this.props.user.userId)} style={{float: 'right'}} >Log Out</Link>
                     </React.Fragment>  
                 }
-                {/* <Link style={{float: 'right'}} to='/register'>Register</Link> */}
             </div>
         );
     }

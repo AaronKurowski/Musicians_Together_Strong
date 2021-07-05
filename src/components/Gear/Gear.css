@@ -1,9 +1,7 @@
 .gear-main-div {
-    /* background-color: purple; */
     color: white !important;
     display: block;
     align-items: flex-end;
-    /* border: 1px solid magenta; */
     height: 100vh;
 }
 

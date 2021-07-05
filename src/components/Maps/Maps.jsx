@@ -13,31 +13,6 @@ const mapStyles = {
 }
 
 class MapContainer extends Component {
-    // constructor(){
-    //     super();
-    //     this.Geocoder("Kenosha");
-    //     this.state = {
-    //         address: {}
-    //     }
-    // }
-
-    // Geocoder = async (param) => {
-    //     Geocode.setApiKey(mapsKey.geoKey);
-    //     debugger;
-
-    //     await Geocode.fromAddress(param).then(
-    //     (response) => {
-    //             console.log(response.results[0].geometry.location);
-    //             const coords = response.results[0].geometry.location;
-    //             this.setState({
-    //                 address: coords
-    //             });
-    //         },
-    //         (error) => {
-    //             console.log(error);
-    //         }
-    //     );
-    // }
 
     render(){
         console.log(mapsKey.geoKey);

@@ -27,7 +27,6 @@ class LoginForm extends Component {
             userName: this.state.userName,
             password: this.state.password
         };
-        debugger;
 
         this.props.loginUser(credentials);
         this.setState({

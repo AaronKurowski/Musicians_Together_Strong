@@ -19,7 +19,6 @@ export const fetchProfile = (userId) => dispatch => {
 }
 
 export const updateProfile = (userId, info) => dispatch => {
-    debugger;
     axios.put(`https://localhost:44394/api/profile/${userId}`, {
         firstName: info.firstName,
         lastName: info.lastName,
@@ -33,7 +32,6 @@ export const updateProfile = (userId, info) => dispatch => {
 }
 
 export const removeProfile = () => dispatch => {
-    debugger;
     dispatch({
         type: REMOVE_PROFILE,
         payload: []

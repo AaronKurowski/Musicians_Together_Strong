@@ -17,7 +17,6 @@ class ShowListings extends Component {
 
     mapShows = () => {
         console.log(this.props.shows);
-        debugger;
         return this.props.shows.map(show => (
             <div className="card card-showlisting">
                 <div className="card-body card-show-body">

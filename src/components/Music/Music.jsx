@@ -17,7 +17,6 @@ const Music = () => {
                     <button className="btn" onClick={() => setView("musicians")}>Musicians</button>
                 </div>
             </div>
-
         );
     }
 
@@ -41,7 +40,6 @@ const Music = () => {
 
                 <Profiles />
             </div>
-
         );
     }
 }

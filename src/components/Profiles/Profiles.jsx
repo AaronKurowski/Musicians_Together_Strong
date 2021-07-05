@@ -77,9 +77,7 @@ class Profiles extends Component {
                     </form>
                 </div>
                 {this.mapProfiles()}
-
             </div>
-            
         );
     }
 }

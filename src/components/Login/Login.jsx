@@ -6,11 +6,6 @@ import LoginForm from './LoginForm.jsx';
 
 class Login extends Component {
 
-    componentWillMount = () => {
-        //
-    }
-
-    
     render(){
         return(
             <div className="big-log">

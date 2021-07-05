@@ -20,9 +20,9 @@ const Home = () => {
                 <div className="home-btn-gear">
                     <Link to="/gear"><button className="btn btn-lg" type="submit">On-Time Gear</button></Link>
                 </div>
+                
             </div>
         </React.Fragment>        
-
     );
 }
 

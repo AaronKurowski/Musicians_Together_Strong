@@ -60,9 +60,7 @@ class Songs extends Component {
                     </form>
                 </div>
                 
-                {/* this div below needs to be clickable to redirect to the user who posted it */}
                 <ul class="list-group">
-                    {/* list-group-item needs to be clickable */}
                     {filteredSongs.map(song =>  
                         <Link className="profile-link" to={{pathname: "/viewprofile", state: {id: song.userId}}}>
                             <li className="hover list-group-item">
@@ -73,8 +71,7 @@ class Songs extends Component {
                             </li>
                         </Link>
                     )}
-                </ul>
-                
+                </ul>       
             </div>
         );
     }
