@@ -24,7 +24,7 @@ export default function(state = initialState, action){
         case LOGOUT_USER:
             return{
                 ...state,
-                items: action.payload
+                items: []
             }
         default:
             return state;

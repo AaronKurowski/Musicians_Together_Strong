@@ -68,7 +68,7 @@ class UserProfile extends Component {
     }
 
     mapSongs = () => {
-        const filteredSongs = this.filterSongs(this.props.songs, this.props.user.id);
+        const filteredSongs = this.filterSongs(this.props.songs, this.props.user[0].id);
         return(
 
             // <ul class="list-group">
@@ -118,10 +118,10 @@ class UserProfile extends Component {
                         </div>
                         <div className="col-md-8">
                             <div className="card-body card-body-profile">
-                                <h5 className="card-title">{this.props.user.firstName} {this.props.user.lastName}</h5>
-                                <p className="card-text">{this.props.user.instrument}</p>
-                                <p className="card-text">{this.props.user.genre}</p>
-                                <p className="card-text"><small className="text-muted">{this.props.user.email}</small></p>
+                                <h5 className="card-title">{this.props.user[0].firstName} {this.props.user.lastName}</h5>
+                                <p className="card-text">{this.props.user[0].instrument}</p>
+                                <p className="card-text">{this.props.user[0].genre}</p>
+                                <p className="card-text"><small className="text-muted">{this.props.user[0].email}</small></p>
                             </div>
                         </div>
                     </div>

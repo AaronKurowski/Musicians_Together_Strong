@@ -1,5 +1,6 @@
 import { REGISTER_USER, LOGIN_USER, GET_USER, LOGOUT_USER } from "./types";
 import axios from 'axios';
+import authReducer from "../reducers/authReducer";
 
 export const registerUser = (postRegister) => dispatch => {
     debugger;
@@ -37,15 +38,15 @@ export const getUser = (token) => async dispatch => {
         headers: {"Authorization" : `Bearer ${token}`}
     }).then(user => dispatch({
             type: GET_USER,
-            payload: user.data
+            payload: [user.data]
         }));
 }
 
-export const logoutUser = (index) => dispatch => {
+export const logoutUser = () => dispatch => {
     debugger;
     dispatch({
         type: LOGOUT_USER,
-        payload: index
+        payload: {}
     })
     localStorage.removeItem("token");
 }
