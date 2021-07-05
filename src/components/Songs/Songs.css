@@ -14,3 +14,38 @@
     color: white;
     font-weight: 700;
 }
+
+.genre-label {
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.list-group {
+    /* max-width: 1058px; */
+    justify-content: block !important;
+    width: 100% !important;
+    margin-top: 12px;
+    align-self: center;
+}
+
+.list-group-item {
+    background-color: black !important;
+    border: 1px solid whitesmoke !important;
+    color: white !important;
+    min-height: 55px;
+    max-width: inherit;
+    justify-content: center !important;
+    width: 55%;
+    align-self: center;
+    margin-bottom: 10px;
+}
+
+.hover:hover {
+    margin-left: 35px;
+    background-color: blue;
+    color: blue;
+    border-color: 2px solid gold;
+}
+
+.genre-form {
+    margin-left: 25px;
+}

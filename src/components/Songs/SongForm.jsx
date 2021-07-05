@@ -3,6 +3,7 @@ import { Button, Modal } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { createSong } from '../../actions/musicAction';
+import './SongForm.css';
 
 
 class SongForm extends Component {

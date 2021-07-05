@@ -44,8 +44,8 @@ class Songs extends Component {
                 <SongForm />
 
                 <div className="search-div">
-                    <form>
-                        <label for="searchQuery">Select a genre to search</label>
+                    <form className="genre-form">
+                        <label className="genre-label" for="searchQuery">Select a genre to search</label><br />
                         <select name="searchQuery" value={this.state.value} onChange={(event) => this.handleChange(event)}>
                             <option disabled selected value> --- select an option ---</option>
                             <option value="metal">Metal</option>
@@ -59,10 +59,15 @@ class Songs extends Component {
                 </div>
                 
                 {/* this div below needs to be clickable to redirect to the user who posted it */}
-                {filteredSongs.map(song => 
-                    <div onClick>{song.title}</div>
-                )}
-
+                <ul class="list-group">
+                    {filteredSongs.map(song =>  
+                        <li className="hover list-group-item">
+                            {song.title}
+                            
+                        </li>
+                    )}
+                </ul>
+                
             </div>
         );
     }
