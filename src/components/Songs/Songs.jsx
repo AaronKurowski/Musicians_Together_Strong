@@ -58,8 +58,9 @@ class Songs extends Component {
                     </form>
                 </div>
                 
+                {/* this div below needs to be clickable to redirect to the user who posted it */}
                 {filteredSongs.map(song => 
-                    <div>{song.title}</div>
+                    <div onClick>{song.title}</div>
                 )}
 
             </div>

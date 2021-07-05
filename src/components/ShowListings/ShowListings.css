@@ -14,5 +14,22 @@
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    row-gap: 10px;
+    row-gap: 26px;
+}
+
+.card-body {
+    background-color:whitesmoke;
+    color: black;
+    font-weight: 700;
+    border: 1px solid black;
+    margin: 5px;
+}
+
+.card {
+    box-shadow: 5px 10px black;
+}
+
+.show-name {
+    color: black !important;
+    font-weight: 600;
 }

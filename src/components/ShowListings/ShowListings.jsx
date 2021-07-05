@@ -10,6 +10,11 @@ class ShowListings extends Component {
         this.props.fetchShows();
     }
 
+    formatDate = (dateString) => {
+        var options = { year: 'numeric', month: 'long', day: 'numeric'}
+        return new Date(dateString).toLocaleDateString([], options);
+    }
+
     mapShows = () => {
         console.log(this.props.shows);
         debugger;
@@ -17,15 +22,16 @@ class ShowListings extends Component {
             <div className="card">
                 <div className="card-body">
                     <img className="card-img-top" src={show.imageURL} alt="show flyer"></img>
-                    <h4>{show.name}</h4> 
+                    <h3 className="show-name">{show.name}</h3> 
                     <p>Lineup: {show.bands}</p>         
                     <p>{show.description}</p>
-                    <p>${show.entryFee}</p>
-                    <p>{show.date}</p>
+                    <p>${show.entryFee} Entry</p>
+                    <p>{this.formatDate(show.date)}</p>
                 </div>
             </div>
         ));
     }
+
     render(){
         return(
             <div>
