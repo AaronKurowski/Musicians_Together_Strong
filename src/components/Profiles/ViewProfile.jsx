@@ -8,7 +8,13 @@ class ViewProfile extends Component {
 
     componentWillMount = () => {
         const songId = this.props.location.state.id;
-        this.props.fetchProfile(songId);
+        const profileId = this.props.location.state.id;
+        if(!songId){
+            this.props.fetchProfile(profileId);
+        }
+        else{
+            this.props.fetchProfile(songId);
+        }
     }
 
     componentWillUnmount = () => {

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {fetchAllProfiles} from '../../actions/profileAction';
 import './Profiles.css';
+import { Link } from 'react-router-dom';
 
 
 class Profiles extends Component {
@@ -22,12 +23,14 @@ class Profiles extends Component {
         return(
             <ul className="list-group">
                 {filteredProfiles.map((profile) =>  
-                    <li className="hover list-group-item">
-                        <div>
-                            {profile.firstName} {profile.lastName}<br />
-                        </div>
-                        <div className="profile-div">{profile.genre} {profile.instrument}</div>                    
-                    </li>
+                    <Link className="profile-link" to={{pathname: "/viewprofile", state: {id: profile.id}}}>
+                        <li className="hover list-group-item">
+                            <div>
+                                {profile.firstName} {profile.lastName}<br />
+                            </div>
+                            <div className="profile-div">{profile.genre} {profile.instrument}</div>                    
+                        </li>
+                    </Link>
                 )}
             </ul>
         );
