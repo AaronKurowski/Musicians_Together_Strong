@@ -37,6 +37,7 @@ class Gear extends Component {
                 console.log(error);
             }
         );
+
     }
 
     mapGear = () => {
@@ -90,7 +91,7 @@ class Gear extends Component {
                             </tbody>
                         </table> 
                     </div> 
-                    <Map loc={this.state.loc} />  
+                    <Map refs loc={this.state.loc} />  
                 </div>
             </React.Fragment>
         );  

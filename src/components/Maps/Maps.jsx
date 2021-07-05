@@ -8,6 +8,7 @@ import Geocode from "react-geocode";
 const mapStyles = {
     width: '98.1%',
     height: '550px',
+    marginTop: '12px'
 
 }
 

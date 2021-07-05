@@ -19,8 +19,8 @@ class ShowListings extends Component {
         console.log(this.props.shows);
         debugger;
         return this.props.shows.map(show => (
-            <div className="card">
-                <div className="card-body">
+            <div className="card card-showlisting">
+                <div className="card-body card-show-body">
                     <img className="card-img-top" src={show.imageURL} alt="show flyer"></img>
                     <h3 className="show-name">{show.name}</h3> 
                     <p>Lineup: {show.bands}</p>         

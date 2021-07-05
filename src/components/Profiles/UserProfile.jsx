@@ -70,11 +70,39 @@ class UserProfile extends Component {
     mapSongs = () => {
         const filteredSongs = this.filterSongs(this.props.songs, this.props.user.id);
         return(
+
+            // <ul class="list-group">
+            //         {filteredSongs.map(song =>  
+            //             <li className="hover list-group-item">
+            //                 <div>
+            //                     {song.title} by {song.artist}<br/>
+            //                 </div>
+            //                 <div className="genre-div">{song.genre}</div>
+                            
+
+            //             </li>
+            //         )}
+            //     </ul>
+
             <div>
-                {filteredSongs.map((song) => 
-                    <div>{song.title}</div>
-                )}
+                <h3>Songs you've posted:</h3>
+                <ul className="list-group">
+                    {filteredSongs.map(song => 
+                        <li className="hover list-group-item">
+                            <div>{song.title}</div>
+                            <div>{song.album}</div>
+                            <div>{song.artist}</div>
+                        </li>    
+                    )}
+                </ul>
             </div>
+
+            // <div>
+            //      <h3 className="profile-songs">Songs you've posted: </h3>
+            //     {filteredSongs.map((song) => 
+            //         <div>{song.title}</div>
+            //     )}
+            // </div>
         );
     }
 
@@ -83,12 +111,21 @@ class UserProfile extends Component {
         console.log(this.props.songs);
         return(
             <div className="outer-profile-div">
-                <h2>Hello {this.props.user.userName}</h2>
-                {this.props.user.instrument}
-                {this.props.user.genre}
-                {this.props.user.email}
-                {this.props.user.firstName}
-                {this.props.user.lastName}
+                <div className="card card-profile mb-3">
+                    <div className="row g-0">
+                        <div className="col-md-4">
+                            img
+                        </div>
+                        <div className="col-md-8">
+                            <div className="card-body card-body-profile">
+                                <h5 className="card-title">{this.props.user.firstName} {this.props.user.lastName}</h5>
+                                <p className="card-text">{this.props.user.instrument}</p>
+                                <p className="card-text">{this.props.user.genre}</p>
+                                <p className="card-text"><small className="text-muted">{this.props.user.email}</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <Button className="modal-opener" onClick={() => this.handleModal()}>Update Your Info</Button>
 

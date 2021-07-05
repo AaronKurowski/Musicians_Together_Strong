@@ -15,7 +15,7 @@ export const createSong = (postSong) => dispatch => {
         title: postSong.title,
         userId: postSong.userId,
         artist: postSong.artist,
-        album: postSong.artist,
+        album: postSong.album,
         genre: postSong.genre,
         audioFile: postSong.audioFile,
         imageURL: postSong.imageURL,

@@ -17,7 +17,7 @@
     row-gap: 26px;
 }
 
-.card-body {
+.card-show-body {
     background-color:whitesmoke;
     color: black;
     font-weight: 700;
@@ -25,7 +25,7 @@
     margin: 5px;
 }
 
-.card {
+.card-showlisting {
     box-shadow: 5px 10px black;
 }
 
