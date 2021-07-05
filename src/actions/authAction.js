@@ -52,4 +52,5 @@ export const logoutUser = () => dispatch => {
         payload: {}
     })
     localStorage.removeItem("token");
+    alert("You have logged out")
 }

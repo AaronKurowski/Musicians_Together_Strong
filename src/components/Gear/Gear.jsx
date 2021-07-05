@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchGear } from '../../actions/gearAction';
+import { fetchAllProfiles } from '../../actions/profileAction';
 import './Gear.css';
 import '../Maps/Maps.css';
 import GearForm from './GearForm.jsx';
@@ -20,6 +21,8 @@ class Gear extends Component {
 
     componentWillMount = () => {
         this.props.fetchGear();
+        this.props.fetchAllProfiles();
+        
     }
 
     Geocoder = async (param) => {
@@ -37,7 +40,16 @@ class Gear extends Component {
                 console.log(error);
             }
         );
+    }
 
+    // method that returns the seller from gears foreign id
+    getSeller = (userId) => {
+        
+        for(let i = 0; i < this.props.profiles.length; i++){
+            if(this.props.profiles[i].id == userId){
+                return this.props.profiles[i].userName
+            }
+        }
     }
 
     mapGear = () => {
@@ -45,7 +57,7 @@ class Gear extends Component {
 
         return this.props.gear.map((gear, index) => (
             <tr className="table-row" onClick={() => this.Geocoder(gear.location)}>
-                <td>Seller</td>
+                <td>{this.getSeller(gear.userId)}</td>
                 <td>{gear.name}</td>
                 <td>${gear.price}</td>
                 <td>{gear.description}</td>
@@ -91,7 +103,7 @@ class Gear extends Component {
                             </tbody>
                         </table> 
                     </div> 
-                    <Map refs loc={this.state.loc} />  
+                    {/* <Map refs loc={this.state.loc} />   */}
                 </div>
             </React.Fragment>
         );  
@@ -100,11 +112,14 @@ class Gear extends Component {
 
 Gear.propTypes = {
     fetchGear: PropTypes.func.isRequired,
-    gear: PropTypes.array.isRequired
+    gear: PropTypes.array.isRequired,
+    fetchAllProfiles: PropTypes.func.isRequired,
+    profiles: PropTypes.array.isRequired
 };
 
 const mapStateToProps = state => ({
-    gear: state.gear.items
+    gear: state.gear.items,
+    profiles: state.profile.items
 });
 
-export default connect(mapStateToProps, { fetchGear })(Gear);
+export default connect(mapStateToProps, { fetchGear, fetchAllProfiles })(Gear);

@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchProfile, removeProfile } from '../../actions/profileAction';
+import './ViewProfile.css';
+import { Link } from 'react-router-dom';
 
 
 class ViewProfile extends Component {
@@ -21,7 +23,7 @@ class ViewProfile extends Component {
         this.props.removeProfile();
     }
 
-    // function is the same as in other files. Leaving for now but could put in a help file to clean up
+    // function is the same as in other files. Leaving for now but could put in a helper file to clean up
     filterSongs = (songs, userId) => {
         let filteredSongs = songs.filter((song) => {
             if(song.userId == userId){
@@ -60,25 +62,25 @@ class ViewProfile extends Component {
         else{
             return(
                 <React.Fragment>
-                <div className="outer-profile-div">
-                    <div className="card card-profile mb-3">
-                        <div className="row g-0">
-                            <div className="col-md-4">
-                                img
-                            </div>
-                            <div className="col-md-8">
-                                <div className="card-body card-body-profile">
-                                    <h5 className="card-title">{this.props.profile[0].firstName} {this.props.profile[0].lastName}</h5>
-                                    <p className="card-text">{this.props.profile[0].instrument}</p>
-                                    <p className="card-text">{this.props.profile[0].genre}</p>
-                                    <p className="card-text"><small className="text-muted">{this.props.profile[0].email}</small></p>
+                    <div className="outer-profile-div">
+                        <Link to="/music"><button className="btn profile-back">Back</button></Link>
+                        <div className="card card-profile mb-3">
+                            <div className="row g-0">
+                                <div className="col-md-4">
+                                    img
+                                </div>
+                                <div className="col-md-8">
+                                    <div className="card-body card-body-profile">
+                                        <h5 className="card-title">{this.props.profile[0].firstName} {this.props.profile[0].lastName}</h5>
+                                        <p className="card-text">{this.props.profile[0].instrument}</p>
+                                        <p className="card-text">{this.props.profile[0].genre}</p>
+                                        <p className="card-text"><small className="text-muted">{this.props.profile[0].email}</small></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        {this.mapSongs()}
                     </div>
-                    {this.mapSongs()}
-                </div>
-                
                 </React.Fragment>
             );
         }
