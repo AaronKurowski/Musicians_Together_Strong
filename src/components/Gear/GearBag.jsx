@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { fetchGearBag } from '../../actions/bagAction';
+import { fetchGearBag, deleteGearFromBag } from '../../actions/bagAction';
 import { getUser } from '../../actions/authAction';
 import './GearBag.css';
 
@@ -33,8 +33,8 @@ class GearBag extends Component {
     render(){
         return(
             <div className="gearbag-div">
-                <div className="table-div-bag">
-                    <table className>
+                <div className="table-div-bag table-div">
+                    <table className="table">
                         <thead>
                                 <tr>
                                     <th>Name</th>
@@ -47,15 +47,15 @@ class GearBag extends Component {
                         </thead>
                         <tbody>
                             {this.props.bag.map((item, index) => 
-                                <tr>
+                                <tr className="table-row">
                                     <td>{item.gear.name}</td>
                                     <td>{item.gear.description}</td>
                                     <td>{item.gear.condition}</td>
-                                    <td>{item.gear.price}</td>
+                                    <td>${item.gear.price}</td>
                                     <td>{item.gear.contact}</td>
                                     <td>{item.gear.location}</td>
-                                    <td><button>Delete</button></td>
-                                    <td><button>Confirm</button></td>
+                                    <td><button className="delete-btn btn" onClick={() => this.props.deleteGearFromBag(this.props.user[0].id, item.gear.gearId)}>Delete</button></td>
+                                    <td><button className="confirm-btn btn">Confirm</button></td>
                                 </tr>
                             )}
                         </tbody>
@@ -74,7 +74,8 @@ GearBag.propTypes = {
     fetchGearBag: PropTypes.func.isRequired,
     bag: PropTypes.array.isRequired,
     user: PropTypes.array.isRequired,
-    getUser: PropTypes.func.isRequired
+    getUser: PropTypes.func.isRequired,
+    deleteGearFromBag: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -82,4 +83,4 @@ const mapStateToProps = state => ({
     user: state.auth.items
 });
 
-export default connect(mapStateToProps, { fetchGearBag, getUser })(GearBag);
+export default connect(mapStateToProps, { fetchGearBag, getUser, deleteGearFromBag })(GearBag);

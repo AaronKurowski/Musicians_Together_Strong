@@ -11,6 +11,7 @@ export const NEW_GEAR = 'NEW_GEAR';
 // bag
 export const FETCH_BAG = 'FETCH_BAG';
 export const ADD_GEAR_TO_BAG = 'ADD_GEAR_TO_BAG';
+export const DELETE_GEAR = 'DELETE_GEAR';
 
 // auth
 export const REGISTER_USER = 'REGISTER_USER';

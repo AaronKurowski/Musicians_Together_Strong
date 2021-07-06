@@ -49,7 +49,7 @@ class Songs extends Component {
                     <form className="genre-form">
                         <label className="genre-label" for="searchQuery">Select a genre to search</label><br />
                         <select name="searchQuery" value={this.state.value} onChange={(event) => this.handleChange(event)}>
-                            <option disabled selected value> --- select an option ---</option>
+                            <option value="" > --- select an option ---</option>
                             <option value="metal">Metal</option>
                             <option value="punk">Punk</option>
                             <option value="blues">Blues</option>

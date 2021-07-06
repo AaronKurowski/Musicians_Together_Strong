@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './GearForm.css';
 import { connect } from 'react-redux';
 import { createGear } from '../../actions/gearAction';
+import { getUser } from '../../actions/authAction';
 import PropTypes from 'prop-types';
 import { Button, Modal } from 'react-bootstrap';
 
@@ -46,7 +47,7 @@ class GearForm extends Component {
         debugger;
 
         const gear = {
-            userId: this.state.userId,
+            userId: this.props.user[0].id,
             item: this.state.item,
             description: this.state.description,
             price: parseInt(this.state.price),
@@ -122,7 +123,12 @@ class GearForm extends Component {
 }
 
 GearForm.propTypes = {
-    createGear: PropTypes.func.isRequired
+    createGear: PropTypes.func.isRequired,
+    getUser: PropTypes.func.isRequired
 };
 
-export default connect(null, { createGear })(GearForm);
+const mapStateToProps = state => ({
+    user: state.auth.items
+})
+
+export default connect(mapStateToProps, { createGear, getUser })(GearForm);

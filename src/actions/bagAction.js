@@ -1,4 +1,4 @@
-import { ADD_GEAR_TO_BAG, FETCH_BAG } from "./types";
+import { ADD_GEAR_TO_BAG, FETCH_BAG, DELETE_GEAR } from "./types";
 import axios from 'axios';
 
 export const fetchGearBag = (userId) => dispatch => {
@@ -21,4 +21,13 @@ export const addGearToBag = (userId, gearId) => dispatch => {
             payload: bag.data
         }));
     alert("Gear added to bag successfully!")
+}
+
+export const deleteGearFromBag = (userId, gearId) => dispatch => {
+    axios.delete(`https://localhost:44394/api/gearbag/${userId}/${gearId}`)
+        .then(bag => dispatch({
+            type: DELETE_GEAR,
+            payload: bag.data
+        }));
+    alert("Gear removed");
 }

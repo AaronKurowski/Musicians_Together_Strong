@@ -38,7 +38,7 @@ class SongForm extends Component {
         event.preventDefault();
 
         const song = {
-            userId: this.props.user.id,
+            userId: this.props.user[0].id,
             title: this.state.title,
             artist: this.state.artist,
             album: this.state.album,

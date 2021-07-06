@@ -11,3 +11,16 @@
 .transaction-div {
 
 }
+
+.delete-btn {
+    background-color: red !important;
+    border-color: green !important;
+    border-radius: 30px !important;
+    font-weight: 600 !important;
+}
+
+.confirm-btn {
+    background-color: limegreen !important;
+    border-radius: 30px !important;
+    font-weight: 600 !important;
+}

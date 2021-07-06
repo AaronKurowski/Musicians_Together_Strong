@@ -22,7 +22,8 @@ class Gear extends Component {
         }
     }
 
-    componentWillMount = () => {
+
+    componentDidMount = () => {
         this.props.fetchGear();
         this.props.fetchAllProfiles();
         this.props.getUser();
@@ -47,6 +48,7 @@ class Gear extends Component {
 
     // method that returns the seller from gears foreign id
     getSeller = (userId) => {
+        debugger;
         for(let i = 0; i < this.props.profiles.length; i++){
             if(this.props.profiles[i].id == userId){
                 return this.props.profiles[i].userName
