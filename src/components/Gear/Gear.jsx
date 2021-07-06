@@ -105,7 +105,7 @@ class Gear extends Component {
                             </tbody>
                         </table> 
                     </div> 
-                    {/* <Map refs loc={this.state.loc} /> */}
+                    <Map loc={this.state.loc} />
                 </div>
             </React.Fragment>
         );  

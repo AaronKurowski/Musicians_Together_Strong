@@ -61,7 +61,7 @@ class Profiles extends Component {
                     <form className="instrument-form">
                         <label for="searchQuery">Search user by their instrument</label> <br />
                         <select name="searchQuery" value={this.state.value} onChange={(event) => this.handleChange(event)}>
-                            <option disabled selected value> --- select an option ---</option>
+                            <option > --- select an option ---</option>
                             <option value="guitar">Guitar</option>
                             <option value="bass">Bass</option>
                             <option value="drums">Drums</option>

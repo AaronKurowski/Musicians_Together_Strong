@@ -1,11 +1,13 @@
 #grad {
-    background-image: linear-gradient(blue, magenta);
+    background-image: linear-gradient(rgb(90, 128, 253), rgb(249, 163, 255));
 }
 
 h1{
+    color: white;
+
     text-align: center;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    text-shadow: -1px 0 magenta, 0 1px magenta, 1px 0 magenta, 0 -1px magenta;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .main-div {
@@ -14,5 +16,5 @@ h1{
 }
 
 body {
-    background-image: linear-gradient(magenta, blue);
+    background-image: linear-gradient(rgb(249, 163, 255), rgb(90, 128, 253));
 }

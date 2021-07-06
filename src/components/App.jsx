@@ -43,6 +43,11 @@ class App extends Component {
                 <Nav />
                 <h1>Musicians Together Strong</h1>
 
+                {/* <h3>Welcome to Musicians Together Strong. This site is created by Aaron Kurowski that aims to bring many of the things
+                    a musician would need into one place. Things like finding like-minded musicians to play with, planning for local shows, and a gear store with items
+                    posted by other users of the site. 
+                </h3> */}
+
                 <Switch>
                     <Route exact path="/" component={Home}/>
                     <Route exact path='/register' component={Register}></Route>
@@ -52,7 +57,7 @@ class App extends Component {
                     <Route exact path="/viewprofile" component={ViewProfile} />
                     <Route exact path="/listings" component={ShowListings}/>
                     <Route exact path="/gear" component={Gear}/>
-                    <Route exact path="/music" component={Music}/> 
+                    <Route exact path="/music" component={Music}/>
                 </Switch>
             </div>
         );

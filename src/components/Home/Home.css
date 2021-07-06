@@ -3,10 +3,39 @@
     justify-content: space-between;
     padding: 20px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.btn{
-    background-color: magenta !important;
-    color: black !important;
-    border: 1px solid black !important;
+.home-btns {
+    display: block !important;
+    justify-content: center !important;
+    width: 300px;
+    /* font-weight: 700; */
+}
+
+.home-img {
+    width: 300px;
+    height: 365px;
+}
+
+.music-btn-main {
+    margin-left: 33%;
+}
+
+.show-btn {
+    margin-left: 22%;
+}
+
+.gear-btn {
+    margin-left: 23%;
+}
+
+.creator{
+    text-align: center !important;
+    font-weight: 700;
+}
+
+.btn-lg {
+    box-shadow: 2px 2px 1px !important;
 }

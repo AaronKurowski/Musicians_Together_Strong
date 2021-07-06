@@ -1,7 +1,10 @@
+
+
 .card {
     width: 18rem !important;
     background-color: whitesmoke !important;
     color: black;
+    opacity: .95;
 }
 
 .listing-wrapper {
@@ -13,8 +16,15 @@
 
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    row-gap: 26px;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 60px;
+    column-gap: 200px;
+    background-image: url(../../Images/concert.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* background-position: center; */
+    background-size: cover;
+    height: auto;
 }
 
 .card-show-body {
@@ -33,3 +43,4 @@
     color: black !important;
     font-weight: 600;
 }
+

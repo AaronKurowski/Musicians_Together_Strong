@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchShows } from '../../actions/showAction';
 import './ShowListings.css';
+import concert from '../../Images/concert.jpg';
 
 class ShowListings extends Component {
     componentDidMount = () => {

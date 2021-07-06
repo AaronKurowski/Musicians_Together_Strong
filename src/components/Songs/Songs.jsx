@@ -45,8 +45,8 @@ class Songs extends Component {
 
                 <SongForm />
 
-                <div className="search-div">
-                    <form className="genre-form">
+                <div className="outer-search-div">
+                    <div className="inner-search-div">
                         <label className="genre-label" for="searchQuery">Select a genre to search</label><br />
                         <select name="searchQuery" value={this.state.value} onChange={(event) => this.handleChange(event)}>
                             <option value="" > --- select an option ---</option>
@@ -57,7 +57,7 @@ class Songs extends Component {
                             <option value="rap">Rap</option>
                             <option value="electronic">Electronic</option>
                         </select>
-                    </form>
+                    </div>
                 </div>
                 
                 <ul class="list-group">
