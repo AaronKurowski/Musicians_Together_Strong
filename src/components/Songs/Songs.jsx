@@ -62,7 +62,7 @@ class Songs extends Component {
                 
                 <ul class="list-group">
                     {filteredSongs.map(song =>  
-                        <Link className="profile-link" to={{pathname: "/viewprofile", state: {id: song.userId}}}>
+                        <Link className="profile-link hover" to={{pathname: "/viewprofile", state: {id: song.userId}}}>
                             <li className="hover list-group-item">
                                 <div>
                                     {song.title} by {song.artist}<br/>
