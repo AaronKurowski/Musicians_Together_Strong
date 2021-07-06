@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchGear } from '../../actions/gearAction';
 import { fetchAllProfiles } from '../../actions/profileAction';
+import { addGearToBag } from '../../actions/bagAction';
+import {getUser} from '../../actions/authAction';
 import './Gear.css';
 import '../Maps/Maps.css';
 import GearForm from './GearForm.jsx';
@@ -22,7 +24,8 @@ class Gear extends Component {
 
     componentWillMount = () => {
         this.props.fetchGear();
-        this.props.fetchAllProfiles();    
+        this.props.fetchAllProfiles();
+        this.props.getUser();
     }
 
     Geocoder = async (param) => {
@@ -65,7 +68,7 @@ class Gear extends Component {
                 <td>Average</td>
                 <td>{gear.location}</td>
                 <td>{gear.contact}</td>
-                <td><button>Add</button></td>
+                <td><button onClick={() => this.props.addGearToBag(this.props.user[0].id, gear.gearId)}>Add</button></td>
             </tr>
         ));
     }
@@ -100,7 +103,7 @@ class Gear extends Component {
                             </tbody>
                         </table> 
                     </div> 
-                    <Map refs loc={this.state.loc} />  
+                    {/* <Map refs loc={this.state.loc} /> */}
                 </div>
             </React.Fragment>
         );  
@@ -111,12 +114,15 @@ Gear.propTypes = {
     fetchGear: PropTypes.func.isRequired,
     gear: PropTypes.array.isRequired,
     fetchAllProfiles: PropTypes.func.isRequired,
-    profiles: PropTypes.array.isRequired
+    profiles: PropTypes.array.isRequired,
+    addGearToBag: PropTypes.func.isRequired,
+    user: PropTypes.array.isRequired
 };
 
 const mapStateToProps = state => ({
     gear: state.gear.items,
-    profiles: state.profile.items
+    profiles: state.profile.items,
+    user: state.auth.items
 });
 
-export default connect(mapStateToProps, { fetchGear, fetchAllProfiles })(Gear);
+export default connect(mapStateToProps, { getUser, fetchGear, fetchAllProfiles, addGearToBag })(Gear);

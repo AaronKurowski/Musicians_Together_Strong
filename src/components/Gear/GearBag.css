@@ -1,0 +1,13 @@
+.gearbag-div {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.table-div-bag {
+    width: 50%;
+}
+
+.transaction-div {
+
+}
