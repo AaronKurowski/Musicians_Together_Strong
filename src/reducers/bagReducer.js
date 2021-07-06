@@ -1,4 +1,4 @@
-import { FETCH_GEAR, NEW_GEAR, FETCH_BAG } from '../actions/types';
+import { FETCH_BAG } from '../actions/types';
 
 const initialState = {
     items: []
@@ -6,15 +6,10 @@ const initialState = {
 
 export default function(state = initialState, action){
     switch(action.type){
-        case FETCH_GEAR:
+        case FETCH_BAG:
             return{
                 ...state,
                 items: action.payload
-            };
-        case NEW_GEAR:
-            return{
-                ...state,
-                items: [action.payload, ...state.items]
             };
         default:
             return state;

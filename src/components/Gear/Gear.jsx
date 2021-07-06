@@ -65,6 +65,7 @@ class Gear extends Component {
                 <td>Average</td>
                 <td>{gear.location}</td>
                 <td>{gear.contact}</td>
+                <td><button>Add</button></td>
             </tr>
         ));
     }

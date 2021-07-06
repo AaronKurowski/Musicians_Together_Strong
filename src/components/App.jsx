@@ -21,6 +21,7 @@ import PropTypes from 'prop-types';
 import { getUser } from '../actions/authAction';
 import UserProfile from './Profiles/UserProfile.jsx';
 import ViewProfile from './Profiles/ViewProfile.jsx';
+import GearBag from './Gear/GearBag.jsx';
 
 
 class App extends Component {
@@ -46,7 +47,7 @@ class App extends Component {
                     <Route exact path="/" component={Home}/>
                     <Route exact path='/register' component={Register}></Route>
                     <Route exact path="/login" component={Login}/>
-                    <Route exact path="/gearbag" /* component={gearbag} */ />
+                    <Route exact path="/gearbag" component={GearBag} />
                     <Route exact path="/userprofile" component={UserProfile}/>
                     <Route exact path="/viewprofile" component={ViewProfile} />
                     <Route exact path="/listings" component={ShowListings}/>

@@ -15,8 +15,6 @@ const mapStyles = {
 class MapContainer extends Component {
 
     render(){
-        console.log(mapsKey.geoKey);
-        console.log(this.props.loc)
         return(
             <div className="map">
                 <Map className="map"
