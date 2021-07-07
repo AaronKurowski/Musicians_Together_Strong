@@ -5,9 +5,17 @@ import { fetchProfile, removeProfile } from '../../actions/profileAction';
 import './ViewProfile.css';
 import { Link } from 'react-router-dom';
 import SongForm from '../Songs/SongForm.jsx';
+import ReactAudioPlayer from 'react-audio-player';
 
 
 class ViewProfile extends Component {
+    constructor(){
+        super();
+        this.state = {
+            currentAudio: ''
+        };
+    }
+
 
     componentWillMount = () => {
         const songId = this.props.location.state.id;
@@ -22,6 +30,12 @@ class ViewProfile extends Component {
 
     componentWillUnmount = () => {
         this.props.removeProfile();
+    }
+
+    handleMusic = (song) => {
+        this.setState({
+            currentAudio: song.audioFile
+        });
     }
 
     // function is the same as in other files. Leaving for now but could put in a helper file to clean up
@@ -41,7 +55,7 @@ class ViewProfile extends Component {
                 <h3>Songs {this.props.profile[0].firstName} has posted:</h3>
                 <ul className="list-group">
                     {filteredSongs.map(song => 
-                        <li className="hover list-group-item">
+                        <li key={song} onClick={() => this.handleMusic(song)} className="hover list-group-item">
                             <div>{song.title}</div>
                             {/* <div>{song.artist}</div> */}
                             <div>{song.genre}</div>
@@ -63,7 +77,7 @@ class ViewProfile extends Component {
         else{
             return(
                 <React.Fragment>
-                    <div className="outer-profile-div">
+                    <div className="outer-viewprofile-div outer-profile-div">
                         <Link to="/music"><button className="btn profile-back">Back</button></Link>
                         <div className="card card-profile mb-3">
                             <div className="row g-0">
@@ -78,10 +92,13 @@ class ViewProfile extends Component {
                                         <p className="card-text"><small className="text-muted">{this.props.profile[0].email}</small></p>
                                     </div>
                                 </div>
-                            </div>
+                            </div>      
                         </div>
-                        {this.mapSongs()}
+                        <div className="viewprofile-audio-div">
+                            <ReactAudioPlayer src={this.state.currentAudio} className="audio-player" controls/>
+                        </div>
                     </div>
+                    {this.mapSongs()}
                 </React.Fragment>
             );
         }

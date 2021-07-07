@@ -1,5 +1,6 @@
 .profile-back {
     margin-bottom: 10px;
+    margin-right: 10px;
 }
 
 audio {
@@ -14,4 +15,13 @@ audio {
 
 .update-modal {
     margin-top: 10px!important;
+}
+
+.viewprofile-audio-div {
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+.outer-viewprofile-div{
+    display: flex;
 }
