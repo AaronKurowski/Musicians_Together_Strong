@@ -13,8 +13,13 @@ const mapStyles = {
 }
 
 class MapContainer extends Component {
+    constructor(props){
+        super(props);
+    }
 
     render(){
+        console.log(this.props.allLocations);
+        // console.log(this.props.autoGeocoder)
         return(
             <div className="map">
                 <Map className="map"
@@ -23,16 +28,15 @@ class MapContainer extends Component {
                     style={mapStyles}
                     initialCenter={{ lat: 43.0388, lng: -87.9065 }}    
                 >
-                    <Marker 
-                        key="marker_1"
-                        position={this.props.loc}
-                    />
+                    {this.props.allLocations.map((object, index) => {
+                        return <Marker key={index} position={object} />
+                    })}
                 </Map>
             </div>
         );
     }
 }
 
-export default GoogleApiWrapper({
-    apiKey: mapsKey.mapsKey
-})(MapContainer)
+
+
+export default GoogleApiWrapper({apiKey: mapsKey.mapsKey})(MapContainer)

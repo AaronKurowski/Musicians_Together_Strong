@@ -14,17 +14,20 @@ import mapsKey from '../../Keys/MapsKey.js';
 
 
 class Gear extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             loc: {},
-            searchQuery: ''
+            searchQuery: '',
+            allLocations: []
         }
+        this.props.fetchGear();
+        
+
     }
 
-
     componentDidMount = () => {
-        this.props.fetchGear();
+        // this.props.fetchGear();
         this.props.fetchAllProfiles();
         this.props.getUser();
     }
@@ -36,8 +39,9 @@ class Gear extends Component {
         (response) => {
                 console.log(response.results[0].geometry.location);
                 const coords = response.results[0].geometry.location;
+
                 this.setState({
-                    loc: coords
+                    allLocations: [...this.state.allLocations, coords]
                 });
             },
             (error) => {
@@ -61,7 +65,7 @@ class Gear extends Component {
 
         return this.props.gear.map((gear, index) => (
             <tr className="table-row" onClick={() => this.Geocoder(gear.location)}>
-                <td>{this.getSeller(gear.userId)}</td>
+                {/* <td>{this.getSeller(gear.userId)}</td> */}
                 <td>{gear.name}</td>
                 <td>${gear.price}</td>
                 <td>{gear.description}</td>
@@ -105,7 +109,7 @@ class Gear extends Component {
                             </tbody>
                         </table> 
                     </div> 
-                    <Map loc={this.state.loc} />
+                    <Map allLocations={this.state.allLocations} gear={this.props.gear} loc={this.state.loc} />
                 </div>
             </React.Fragment>
         );  
