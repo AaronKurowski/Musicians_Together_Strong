@@ -65,7 +65,7 @@ class Gear extends Component {
 
         return this.props.gear.map((gear, index) => (
             <tr className="table-row" onClick={() => this.Geocoder(gear.location)}>
-                {/* <td>{this.getSeller(gear.userId)}</td> */}
+                <td>{this.getSeller(gear.userId)}</td>
                 <td>{gear.name}</td>
                 <td>${gear.price}</td>
                 <td>{gear.description}</td>
@@ -109,7 +109,7 @@ class Gear extends Component {
                             </tbody>
                         </table> 
                     </div> 
-                    <Map allLocations={this.state.allLocations} gear={this.props.gear} loc={this.state.loc} />
+                    {/* <Map allLocations={this.state.allLocations} gear={this.props.gear} loc={this.state.loc} /> */}
                 </div>
             </React.Fragment>
         );  

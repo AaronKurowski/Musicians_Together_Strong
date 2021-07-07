@@ -9,6 +9,7 @@ import './GearBag.css';
 class GearBag extends Component {
 
     UNSAFE_componentWillMount = () => {
+        this.forceUpdate();
         try{
             debugger;
             let jwt = localStorage.getItem('token');

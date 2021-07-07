@@ -11,7 +11,7 @@ export const fetchGearBag = (userId) => dispatch => {
 
 export const addGearToBag = (userId, gearId) => dispatch => {
     debugger;
-    axios.post(`https://localhost:44394/api/gearbag/${userId}/${gearId}`, {
+    axios.post(`https://localhost:44394/api/gearbag/${userId}`, {
         userId: userId,
         gearId: gearId,
         quantity: 1
@@ -24,6 +24,7 @@ export const addGearToBag = (userId, gearId) => dispatch => {
 }
 
 export const deleteGearFromBag = (userId, gearId) => dispatch => {
+    debugger;
     axios.delete(`https://localhost:44394/api/gearbag/${userId}/${gearId}`)
         .then(bag => dispatch({
             type: DELETE_GEAR,

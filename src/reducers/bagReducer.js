@@ -19,7 +19,7 @@ export default function(state = initialState, action){
         case DELETE_GEAR:
             return{
                 ...state,
-                items: [action.payload, ...state.items]
+                items: state.items.filter((item, index) => index == action.payload)
             };
         default:
             return state;
