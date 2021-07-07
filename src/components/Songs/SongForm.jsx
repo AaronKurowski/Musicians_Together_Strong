@@ -32,6 +32,7 @@ class SongForm extends Component {
         this.setState({
             [event.target.name]: event.target.value
         });
+        console.log(this.state.audioFile);
     }
 
     handleSubmit = (event) => {
@@ -86,7 +87,7 @@ class SongForm extends Component {
                                 <label for="genre">Genre</label>
                                 <input type="text" name="genre" id="genre" value={this.state.genre} onChange={(event) => this.handleChange(event)}></input>
 
-                                <label for="audioFile">Audio File</label>
+                                <label for="audioFile">Audio URL</label>
                                 <input type="text" name="audioFile" id="audioFile" value={this.state.audioFile} onChange={(event) => this.handleChange(event)}/>
 
                                 <label for="imageURL">Image URL</label>

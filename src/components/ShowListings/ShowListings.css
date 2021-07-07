@@ -19,6 +19,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 60px;
     column-gap: 200px;
+    /* margin: 200px; */
     background-image: url(../../Images/concert.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;

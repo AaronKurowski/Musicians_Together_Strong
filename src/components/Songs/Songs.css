@@ -70,7 +70,7 @@
 
 select {
     /* appearance: none; */
-    background-color: magenta !important;
+    background-color: rgb(255, 134, 255) !important;
     border-radius: 10px;
     /* border: 1px solid black; */
     box-shadow: 5px 5px 5px;

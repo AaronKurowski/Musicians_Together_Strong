@@ -1,3 +1,17 @@
 .profile-back {
     margin-bottom: 10px;
 }
+
+audio {
+    border: transparent;
+    margin: 10% 10% 10% 20%;
+}
+
+.inner-profile-div {
+    display: flex;
+    /* justify-content: space-evenly; */
+}
+
+.update-modal {
+    margin-top: 10px!important;
+}

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { fetchProfile, removeProfile } from '../../actions/profileAction';
 import './ViewProfile.css';
 import { Link } from 'react-router-dom';
+import SongForm from '../Songs/SongForm.jsx';
 
 
 class ViewProfile extends Component {

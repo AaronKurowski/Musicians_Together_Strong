@@ -5,6 +5,9 @@ import './UserProfile.css';
 import {Modal, Button} from 'react-bootstrap';
 import { updateProfile } from '../../actions/profileAction';
 import { fetchSongs } from '../../actions/musicAction';
+import ReactAudioPlayer from 'react-audio-player';
+import itsNiceOut from '../../Audio/its nice out.mp3';
+import SongForm from '../Songs/SongForm.jsx';
 
 
 class UserProfile extends Component {
@@ -16,7 +19,8 @@ class UserProfile extends Component {
             email: '',
             genre: '',
             instrument: '',
-            showModal: false
+            showModal: false,
+            currentAudio: ''
         };
     }
 
@@ -33,6 +37,13 @@ class UserProfile extends Component {
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
+        });
+    }
+
+    handleMusic = (song) => {
+        debugger;
+        this.setState({
+            currentAudio: song.audioFile
         });
     }
 
@@ -74,11 +85,11 @@ class UserProfile extends Component {
                 <h3>Songs you've posted:</h3>
                 <ul className="list-group">
                     {filteredSongs.map(song => 
-                        <li className="hover list-group-item">
+                        <li key={song} onClick={() => this.handleMusic(song)} className="hover list-group-item">
                             <div>{song.title}</div>
                             <div>{song.album}</div>
                             <div>{song.artist}</div>
-                        </li>    
+                        </li>
                     )}
                 </ul>
             </div>
@@ -87,29 +98,31 @@ class UserProfile extends Component {
 
     render(){
         console.log(this.props.user);
-        console.log(this.props.songs);
         return(
             <div className="outer-profile-div">
-                <div className="card card-profile mb-3">
-                    <div className="row g-0">
-                        <div className="col-md-4">
-                            img
-                        </div>
-                        <div className="col-md-8">
-                            <div className="card-body card-body-profile">
-                                <h5 className="card-title">{this.props.user[0].firstName} {this.props.user.lastName}</h5>
-                                <p className="card-text">{this.props.user[0].instrument}</p>
-                                <p className="card-text">{this.props.user[0].genre}</p>
-                                <p className="card-text"><small className="text-muted">{this.props.user[0].email}</small></p>
+                <div className="inner-profile-div">
+                    <div className="card card-profile mb-3">
+                        <div className="row g-0">
+                            <div className="col-md-4">
+                                img
+                            </div>
+                            <div className="col-md-8">
+                                <div className="card-body card-body-profile">
+                                    <h5 className="card-title">{this.props.user[0].firstName} {this.props.user.lastName}</h5>
+                                    <p className="card-text">{this.props.user[0].instrument}</p>
+                                    <p className="card-text">{this.props.user[0].genre}</p>
+                                    <p className="card-text"><small className="text-muted">{this.props.user[0].email}</small></p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <ReactAudioPlayer className="audio-player" src={this.state.currentAudio} controls />
                 </div>
 
-                <Button className="modal-opener" onClick={() => this.handleModal()}>Update Your Info</Button>
+                <Button className="modal-opener update-modal" onClick={() => this.handleModal()}>Update Your Info</Button>
 
                 <Modal show={this.state.showModal} onHide={() => this.handleModal()}>
-                    <Modal.Header>Enter the Song Details</Modal.Header>
+                    <Modal.Header>Enter Your Profile Details</Modal.Header>
                     <Modal.Body>
                         <form onSubmit={(event) => this.handleSubmit(event)}>
                             <label for="firstName">First Name</label>
@@ -133,6 +146,8 @@ class UserProfile extends Component {
                     </Modal.Body>
                     <Modal.Footer><Button className="modal-closer" onClick={() => this.handleModal()}>Close</Button></Modal.Footer>
                 </Modal>
+
+                <SongForm />
 
                 {this.mapSongs()}
 

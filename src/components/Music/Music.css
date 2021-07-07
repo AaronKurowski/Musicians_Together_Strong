@@ -11,7 +11,7 @@
 }
 
 .btn{
-    background-color: magenta !important;
+    background-color: rgb(255, 116, 255) !important;
     color: black !important;
     border: 1px solid black !important;
 }
@@ -28,7 +28,7 @@ h3 {
     width: 200px;
 }
 
-.music-btn {
+.music-btn, .profile-btn {
     display: block;
 }
 

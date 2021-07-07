@@ -12,6 +12,7 @@
     "google-maps-react": "^2.0.6",
     "jwt-decode": "^3.1.2",
     "react": "^17.0.2",
+    "react-audio-player": "^0.17.0",
     "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.2",
     "react-geocode": "^0.2.3",
