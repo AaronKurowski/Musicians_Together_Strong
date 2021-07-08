@@ -52,7 +52,6 @@ class Gear extends Component {
 
     // method that returns the seller from gears foreign id
     getSeller = (userId) => {
-        debugger;
         for(let i = 0; i < this.props.profiles.length; i++){
             if(this.props.profiles[i].id == userId){
                 return this.props.profiles[i].userName
@@ -61,7 +60,6 @@ class Gear extends Component {
     }
 
     mapGear = () => {
-        console.log(this.props.gear);
 
         return this.props.gear.map((gear, index) => (
             <tr className="table-row" onClick={() => this.Geocoder(gear.location)}>
@@ -80,6 +78,7 @@ class Gear extends Component {
     }
 
     render(){
+        console.log(this.props.gear);
         return(
             <React.Fragment>
                 <GearForm />
@@ -109,7 +108,7 @@ class Gear extends Component {
                             </tbody>
                         </table> 
                     </div> 
-                    {/* <Map allLocations={this.state.allLocations} gear={this.props.gear} loc={this.state.loc} /> */}
+                    <Map allLocations={this.state.allLocations} gear={this.props.gear} loc={this.state.loc} />
                 </div>
             </React.Fragment>
         );  

@@ -1,4 +1,4 @@
-import { FETCH_GEAR, NEW_GEAR } from "./types";
+import { FETCH_GEAR, NEW_GEAR, BUY_GEAR } from "./types";
 import axios from 'axios';
 
 export const fetchGear = () => dispatch => {
@@ -23,6 +23,16 @@ export const createGear = (postGear) => dispatch => {
     })
     .then(gear => dispatch({
         type: NEW_GEAR,
+        payload: gear.data
+    }));
+}
+
+export const buyGear = (buyerId) => dispatch => {
+    axios.put(`https://localhost:44394/api/gear`, {
+        buyerId: buyerId
+    })
+    .then(gear => dispatch({
+        type: BUY_GEAR,
         payload: gear.data
     }));
 }

@@ -7,11 +7,18 @@ import './GearBag.css';
 
 
 class GearBag extends Component {
+    constructor(){
+        super();
+        this.state = {
+            ordersConfirmed: []
+        };
+        debugger;
+        
+    }
 
-    UNSAFE_componentWillMount = () => {
-        this.forceUpdate();
+
+    componentWillMount = () => {
         try{
-            debugger;
             let jwt = localStorage.getItem('token');
             this.props.getUser(jwt);
         }
@@ -21,7 +28,6 @@ class GearBag extends Component {
     }
 
     componentDidMount = () => {
-        debugger;
         try{
             const currentUserId = this.props.user[0].id;
             this.props.fetchGearBag(currentUserId);
@@ -31,7 +37,33 @@ class GearBag extends Component {
         }
     }
 
+    // confirmOrder = (gear) => {
+    //     //send email to seller
+    //     debugger;
+    //     this.setState({
+    //         ordersConfirmed: [...this.state.ordersConfirmed, gear]
+    //     });
+    //     console.log(this.state.ordersConfirmed);
+    // }
+
+    mapTransactions = (orders) => {
+        debugger;
+        return(
+            <div>
+                {orders.map(order => 
+                    <div className="transaction-data">
+                        <div>${order.price} </div>
+                        <div>{order.name} </div>
+                        <div>The time confirmed</div>
+                    </div>
+                )}
+            </div>
+        );
+    }
+
     render(){
+        // console.log(this.state.ordersConfirmed);
+        console.log(this.props.gear);
         return(
             <div className="gearbag-div">
                 <div className="table-div-bag table-div">
@@ -56,7 +88,7 @@ class GearBag extends Component {
                                     <td>{item.gear.contact}</td>
                                     <td>{item.gear.location}</td>
                                     <td><button className="delete-btn btn" onClick={() => this.props.deleteGearFromBag(this.props.user[0].id, item.gear.gearId)}>Delete</button></td>
-                                    <td><button className="confirm-btn btn">Confirm</button></td>
+                                    <td><button className="confirm-btn btn" onClick>Confirm</button></td>
                                 </tr>
                             )}
                         </tbody>
@@ -65,6 +97,7 @@ class GearBag extends Component {
 
                 <div className="transaction-div">
                     <h3>Transactions</h3>
+                    {this.mapTransactions(this.state.ordersConfirmed)}
                 </div>
             </div>
         );

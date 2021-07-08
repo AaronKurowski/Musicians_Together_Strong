@@ -1,4 +1,4 @@
-import { FETCH_GEAR, NEW_GEAR, FETCH_BAG } from '../actions/types';
+import { FETCH_GEAR, NEW_GEAR, BUY_GEAR } from '../actions/types';
 
 const initialState = {
     items: []
@@ -16,6 +16,11 @@ export default function(state = initialState, action){
                 ...state,
                 items: [action.payload, ...state.items]
             };
+        case BUY_GEAR:
+            return{
+                ...state,
+                items: action.payload
+            }
         default:
             return state;
     }

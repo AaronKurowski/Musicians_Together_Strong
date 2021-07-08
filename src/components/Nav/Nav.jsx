@@ -9,8 +9,8 @@ import { logoutUser } from '../../actions/authAction';
 class Nav extends Component {
 
     render(){
-        console.log('user: ' + this.props.user)
-        console.log(this.props)
+        // console.log('user: ' + this.props.user)
+        // console.log(this.props)
         return(
             <div className="navbar">
                 <Link to='/'>Home</Link>

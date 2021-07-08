@@ -7,6 +7,7 @@ export const NEW_SHOW = 'NEW_SHOW';
 // gear
 export const FETCH_GEAR = 'FETCH_GEAR';
 export const NEW_GEAR = 'NEW_GEAR';
+export const BUY_GEAR = 'BUY_GEAR';
 
 // bag
 export const FETCH_BAG = 'FETCH_BAG';

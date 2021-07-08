@@ -9,7 +9,12 @@
 }
 
 .transaction-div {
+    
+}
 
+.transaction-data {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .delete-btn {

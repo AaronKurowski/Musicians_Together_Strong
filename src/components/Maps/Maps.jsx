@@ -18,7 +18,7 @@ class MapContainer extends Component {
     }
 
     render(){
-        console.log(this.props.allLocations);
+        // console.log(this.props.allLocations);
         // console.log(this.props.autoGeocoder)
         return(
             <div className="map">

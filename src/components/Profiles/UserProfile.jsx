@@ -41,7 +41,6 @@ class UserProfile extends Component {
     }
 
     handleMusic = (song) => {
-        debugger;
         this.setState({
             currentAudio: song.audioFile
         });
@@ -58,7 +57,7 @@ class UserProfile extends Component {
             instrument: this.state.instrument
         }
 
-        this.props.updateProfile(this.props.user.id, updatedInfo);
+        this.props.updateProfile(this.props.user[0].id, updatedInfo);
 
         this.setState({
             firstName: '',
@@ -97,6 +96,7 @@ class UserProfile extends Component {
     }
 
     render(){
+        debugger;
         console.log(this.props.user);
         return(
             <div className="outer-profile-div">

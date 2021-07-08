@@ -25,7 +25,7 @@ import GearBag from './Gear/GearBag.jsx';
 
 
 class App extends Component {
-    componentWillMount = () => {
+    componentDidMount = () => {
         const jwt = localStorage.getItem('token');
         try{
             const user = jwtDecode(jwt);
@@ -42,11 +42,6 @@ class App extends Component {
             <div id="grad" className="container-fluid main-div">
                 <Nav />
                 <h1>Musicians Together Strong</h1>
-
-                {/* <h3>Welcome to Musicians Together Strong. This site is created by Aaron Kurowski that aims to bring many of the things
-                    a musician would need into one place. Things like finding like-minded musicians to play with, planning for local shows, and a gear store with items
-                    posted by other users of the site. 
-                </h3> */}
 
                 <Switch>
                     <Route exact path="/" component={Home}/>
