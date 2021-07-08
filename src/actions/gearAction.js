@@ -27,12 +27,13 @@ export const createGear = (postGear) => dispatch => {
     }));
 }
 
-export const buyGear = (buyerId) => dispatch => {
-    axios.put(`https://localhost:44394/api/gear`, {
+export const buyGear = (buyerId, gearId) => dispatch => {
+    axios.put(`https://localhost:44394/api/gear/${gearId}`, {
         buyerId: buyerId
     })
     .then(gear => dispatch({
         type: BUY_GEAR,
-        payload: gear.data
+        payload: [gear.data]
     }));
+    alert("Transaction Confirmed")
 }

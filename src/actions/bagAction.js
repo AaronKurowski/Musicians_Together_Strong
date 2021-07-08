@@ -30,5 +30,5 @@ export const deleteGearFromBag = (userId, gearId) => dispatch => {
             type: DELETE_GEAR,
             payload: bag.data
         }));
-    alert("Gear removed");
+    alert("Gear removed from bag");
 }

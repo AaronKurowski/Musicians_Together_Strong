@@ -5,16 +5,37 @@
 }
 
 .table-div-bag {
-    width: 50%;
+    width: 60%;
 }
 
-/* .transaction-div {
-    
-} */
+.gearbag-table {
+    background-image: linear-gradient(darkgrey, darkgrey);
+    border: 2px solid black;
+    color: black;
+    font-weight: 600;
+    /* text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; */
+}
 
-.transaction-data {
-    display: flex;
-    justify-content: space-evenly;
+.gearbag-table > thead {
+    border: 1px solid black;
+}
+tbody > tr {
+    border: 1px solid black;
+}
+
+.transaction-table > thead {
+    border: 1px solid black;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+}
+.transaction-table > tr {
+    border: 1px solid black;
+}
+
+.transaction-data > td {
+    border: 1px solid black;
+    font-weight: 600;
 }
 
 .delete-btn {

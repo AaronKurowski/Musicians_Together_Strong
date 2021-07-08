@@ -23,8 +23,8 @@ class Profiles extends Component {
         return(
             <ul className="list-group">
                 {filteredProfiles.map((profile) =>  
-                    <Link className="profile-link" to={{pathname: "/viewprofile", state: {id: profile.id}}}>
-                        <li className="hover list-group-item">
+                    <Link className="profile-link hover" to={{pathname: "/viewprofile", state: {id: profile.id}}}>
+                        <li className="list-group-item">
                             <div>
                                 {profile.firstName} {profile.lastName}<br />
                             </div>

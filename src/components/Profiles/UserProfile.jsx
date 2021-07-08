@@ -117,8 +117,8 @@ class UserProfile extends Component {
                                     <h5 className="card-title">{this.props.user[0].firstName} {this.props.user.lastName}</h5>
                                     <p className="card-text">{this.props.user[0].instrument}</p>
                                     <p className="card-text">{this.props.user[0].genre}</p>
-                                    <p className="card-text">{this.props.user[0].band}</p>
-                                    <p className="card-text"><small className="text-muted">{this.props.user[0].email}</small></p>
+                                    <p className="card-text">Band: {this.props.user[0].band}</p>
+                                    <p className="card-text"><small className="text-muted">Contact Me: {this.props.user[0].email}</small></p>
                                 </div>
                             </div>
                         </div>
