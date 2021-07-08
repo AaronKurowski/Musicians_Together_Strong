@@ -24,7 +24,9 @@ export const updateProfile = (userId, info) => dispatch => {
         lastName: info.lastName,
         email: info.email,
         genre: info.genre,
-        instrument: info.instrument
+        instrument: info.instrument,
+        band: info.band,
+        imageURL: info.imageURL
     }).then(user => dispatch({
         type: UPDATE_PROFILE,
         payload: user.data

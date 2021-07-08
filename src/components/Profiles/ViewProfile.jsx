@@ -81,14 +81,15 @@ class ViewProfile extends Component {
                         <Link to="/music"><button className="btn profile-back">Back</button></Link>
                         <div className="card card-profile mb-3">
                             <div className="row g-0">
-                                <div className="col-md-4">
-                                    img
+                                <div className="col-md-4 img-div">
+                                    <img className="profile-img" src={this.props.profile[0].imageURL} />
                                 </div>
                                 <div className="col-md-8">
                                     <div className="card-body card-body-profile">
                                         <h5 className="card-title">{this.props.profile[0].firstName} {this.props.profile[0].lastName}</h5>
                                         <p className="card-text">{this.props.profile[0].instrument}</p>
                                         <p className="card-text">{this.props.profile[0].genre}</p>
+                                        <p className="card-text">{this.props.profile[0].band}</p>
                                         <p className="card-text"><small className="text-muted">{this.props.profile[0].email}</small></p>
                                     </div>
                                 </div>

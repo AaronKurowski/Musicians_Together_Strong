@@ -17,3 +17,15 @@
 .card-body-profile {
     border: 1px solid whitesmoke;
 }
+
+.img-div {
+    padding: 15px !important;
+    width: auto !important;
+}
+
+.profile-img {
+    margin: 0 auto;
+    width: 100% !important;
+    height: 100% !important;
+
+}

@@ -19,6 +19,8 @@ class UserProfile extends Component {
             email: '',
             genre: '',
             instrument: '',
+            band: '',
+            imageURL: '',
             showModal: false,
             currentAudio: ''
         };
@@ -54,7 +56,9 @@ class UserProfile extends Component {
             lastName: this.state.lastName,
             email: this.state.email,
             genre: this.state.genre,
-            instrument: this.state.instrument
+            instrument: this.state.instrument,
+            band: this.state.band,
+            imageURL: this.state.imageURL
         }
 
         this.props.updateProfile(this.props.user[0].id, updatedInfo);
@@ -64,7 +68,9 @@ class UserProfile extends Component {
             lastName: '',
             email: '',
             genre: '',
-            instrument: ''
+            instrument: '',
+            band: '',
+            imageURL: ''
         })
     }
 
@@ -103,14 +109,15 @@ class UserProfile extends Component {
                 <div className="inner-profile-div">
                     <div className="card card-profile mb-3">
                         <div className="row g-0">
-                            <div className="col-md-4">
-                                img
+                            <div className="col-md-4 img-div">
+                                <img className="profile-img" src={this.props.user[0].imageURL} />
                             </div>
                             <div className="col-md-8">
                                 <div className="card-body card-body-profile">
                                     <h5 className="card-title">{this.props.user[0].firstName} {this.props.user.lastName}</h5>
                                     <p className="card-text">{this.props.user[0].instrument}</p>
                                     <p className="card-text">{this.props.user[0].genre}</p>
+                                    <p className="card-text">{this.props.user[0].band}</p>
                                     <p className="card-text"><small className="text-muted">{this.props.user[0].email}</small></p>
                                 </div>
                             </div>
@@ -139,6 +146,12 @@ class UserProfile extends Component {
 
                             <label for="instrument">Instrument</label>
                             <input type="text" name="instrument" value={this.state.instrument} onChange={(event) => this.handleChange(event)}></input>
+
+                            <label for="band">Band</label>
+                            <input type="text" name="band" value={this.state.band} onChange={(event) => this.handleChange(event)}></input>
+
+                            <label for="imageURL">ImageURL</label>
+                            <input type="text" name="imageURL" value={this.state.imageURL} onChange={(event) => this.handleChange(event)} />
                         
                             <button className="btn modal-submit-btn" type="submit" onClick={() => this.handleModal()}>Update Info!</button>
 
