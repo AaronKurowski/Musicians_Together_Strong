@@ -17,6 +17,7 @@ class ShowForm extends Component {
             imageurl: '',
             entryfee: null,
             date: null,
+            location: '',
             showModal: false
         }
     }
@@ -37,7 +38,8 @@ class ShowForm extends Component {
             bands: this.state.bands,
             imageurl: this.state.imageurl,
             entryfee: parseInt(this.state.entryfee),
-            date: this.state.date
+            date: this.state.date,
+            location: this.state.location
         };
         this.props.createShow(show);
 
@@ -48,7 +50,8 @@ class ShowForm extends Component {
             bands: '',
             imageurl: '',
             entryfee: null,
-            date: null
+            date: null,
+            location: ''
         });
     }
 
@@ -86,6 +89,9 @@ class ShowForm extends Component {
                                
                                 <label for="date">Date</label>
                                 <input type="date" name="date" value={this.state.date} onChange={(event) => this.handleChange(event)}></input>
+
+                                <label for="location">Location</label>
+                                <input type="text" name="location" value={this.state.location} onChange={(event) => this.handleChange(event)}></input>
                                 
                                 <div className="modal-btn-div">
                                     <button onClick={() => this.handleModal()} className="btn modal-submit-btn" type="submit">Submit</button>

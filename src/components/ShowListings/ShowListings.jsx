@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchShows } from '../../actions/showAction';
 import './ShowListings.css';
-import concert from '../../Images/concert.jpg';
+
 
 class ShowListings extends Component {
     componentDidMount = () => {
@@ -27,6 +27,7 @@ class ShowListings extends Component {
                     <p>{show.description}</p>
                     <p>${show.entryFee} Entry</p>
                     <p>{this.formatDate(show.date)}</p>
+                    <p>Location: {show.location}</p>
                 </div>
             </div>
         ));

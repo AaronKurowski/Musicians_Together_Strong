@@ -21,7 +21,8 @@ export const createShow = (postShow) => dispatch => {
             bands: postShow.bands,
             imageurl: postShow.imageurl,
             entryfee: postShow.entryfee,
-            date: postShow.date
+            date: postShow.date,
+            location: postShow.location
         })
         .then(show => dispatch({
             type: NEW_SHOW,

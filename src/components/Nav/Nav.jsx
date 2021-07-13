@@ -21,8 +21,8 @@ class Nav extends Component {
                 }
                 {this.props.user.length > 0 &&
                     <React.Fragment>
-                        <Link to='/userprofile'>Your Profile</Link>
-                        <Link to='/gearbag'>Gearbag</Link>
+                        <Link to='/userprofile'>{this.props.user[0].firstName}'s Profile</Link>
+                        {/* <Link to='/gearbag'>Gearbag</Link> */}
                         <Link onClick={() => this.props.logoutUser(this.props.user.userId)} style={{float: 'right'}} >Log Out</Link>
                     </React.Fragment>  
                 }

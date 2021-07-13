@@ -55,7 +55,7 @@ class ViewProfile extends Component {
                 <h3>Songs {this.props.profile[0].firstName} has posted:</h3>
                 <ul className="list-group">
                     {filteredSongs.map(song => 
-                        <li key={song} onClick={() => this.handleMusic(song)} className="hover list-group-item">
+                        <li key={song} onClick={() => this.handleMusic(song)} className="profile-songs hover list-group-item">
                             <div>{song.title}</div>
                             {/* <div>{song.artist}</div> */}
                             <div>{song.genre}</div>

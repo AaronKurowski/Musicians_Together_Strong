@@ -22,4 +22,5 @@
 
 .table-row {
     cursor: pointer;
+    border: 1px solid white;
 }

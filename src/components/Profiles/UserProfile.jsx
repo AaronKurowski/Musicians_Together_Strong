@@ -90,10 +90,9 @@ class UserProfile extends Component {
                 <h3>Songs you've posted:</h3>
                 <ul className="list-group">
                     {filteredSongs.map(song => 
-                        <li key={song} onClick={() => this.handleMusic(song)} className="hover list-group-item">
-                            <div>{song.title}</div>
+                        <li key={song} onClick={() => this.handleMusic(song)} className="hover profile-songs list-group-item">
+                            <div>{song.title} by {song.artist}</div>
                             <div>{song.album}</div>
-                            <div>{song.artist}</div>
                         </li>
                     )}
                 </ul>

@@ -69,10 +69,10 @@ class Gear extends Component {
                 <td>{gear.description}</td>
                 <td>{gear.condition}</td>
                 <td>{gear.dateListed}</td>
-                <td>Average</td>
+                {/* <td>Average</td> */}
                 <td>{gear.location}</td>
                 <td>{gear.contact}</td>
-                <td><button onClick={() => this.props.addGearToBag(this.props.user[0].id, gear.gearId)}>Add</button></td>
+                {/* <td><button onClick={() => this.props.addGearToBag(this.props.user[0].id, gear.gearId)}>Add</button></td> */}
             </tr>
         ));
     }
@@ -98,7 +98,7 @@ class Gear extends Component {
                                     <th scope="col">Description</th>
                                     <th scope="col">Condition</th>
                                     <th scope="col">Date Listed</th>
-                                    <th scope="col">Avg Response Time</th>
+                                    {/* <th scope="col">Avg Response Time</th> */}
                                     <th scope="col">Location</th>
                                     <th scope="col">Contact</th>
                                 </tr>
