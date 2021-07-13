@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import gearImage from '../../Images/gear.jpg';
@@ -9,6 +9,7 @@ import music from '../../Images/music.svg';
 
 
 const Home = () => {
+
     return(
         <React.Fragment>
             <div className="home-title"></div>

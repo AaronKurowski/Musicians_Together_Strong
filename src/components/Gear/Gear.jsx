@@ -78,7 +78,7 @@ class Gear extends Component {
     }
 
     render(){
-        console.log(this.props.gear);
+        console.log("PROPS", this.props);
         return(
             <React.Fragment>
                 <GearForm />

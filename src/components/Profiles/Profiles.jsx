@@ -73,7 +73,6 @@ class Profiles extends Component {
                             <option value="french horn">French Horn</option>
                             <option value="egg shakers">Egg Shakers</option>
                         </select>
-                        {/* <button className="btn" type="submit">Search Genres</button> */}
                     </form>
                 </div>
                 {this.mapProfiles()}

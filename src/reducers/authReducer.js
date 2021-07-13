@@ -11,12 +11,13 @@ export default function(state = initialState, action){
                 ...state,
                 items: action.payload
             };
-        case LOGIN_USER:
-            return{
-                ...state,
-                items: action.payload
-            };
+        // case LOGIN_USER:
+        //     return{
+        //         ...state,
+        //         items: action.payload
+        //     };
         case GET_USER:
+            debugger;
             return{
                 ...state,
                 items: action.payload

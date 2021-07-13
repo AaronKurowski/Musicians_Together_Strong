@@ -92,7 +92,7 @@ class GearBag extends Component {
 
     render(){
         // console.log(this.state.ordersConfirmed);
-        console.log(this.props.gear);
+        console.log(this.props.bag);
         const correctGear = this.showCorrectGearOnTable(this.props.bag);
         return(
             <div className="gearbag-div">
