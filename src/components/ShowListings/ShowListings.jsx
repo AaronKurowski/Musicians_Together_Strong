@@ -27,7 +27,7 @@ class ShowListings extends Component {
                     <p>{show.description}</p>
                     <p>${show.entryFee} Entry</p>
                     <p>{this.formatDate(show.date)}</p>
-                    <p>Location: {show.location}</p>
+                    <p>{show.location}</p>
                 </div>
             </div>
         ));

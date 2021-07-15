@@ -72,7 +72,7 @@ class Gear extends Component {
                 {/* <td>Average</td> */}
                 <td>{gear.location}</td>
                 <td>{gear.contact}</td>
-                {/* <td><button onClick={() => this.props.addGearToBag(this.props.user[0].id, gear.gearId)}>Add</button></td> */}
+                <td><button className="add-gear-btn" onClick={() => this.props.addGearToBag(this.props.user[0].id, gear.gearId)}>Add</button></td>
             </tr>
         ));
     }
